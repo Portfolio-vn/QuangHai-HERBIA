@@ -1,0 +1,4723 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HERBIA — When Vietnamese Plants Meet Chemistry | Science Exhibition</title>
+  <meta name="description" content="Khám phá hóa học thực vật dược liệu Việt Nam. Dự án STEM cá nhân của học sinh Quang Hải. Mỗi loài cây một câu chuyện - Mỗi phân tử một lời giải." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {
+      /* Brand Color Palette */
+      --bg-primary: #F8FBFA;
+      --bg-secondary: #FFFFFF;
+      --bg-tertiary: #EEF5F3;
+      --bg-card: rgba(255, 255, 255, 0.85);
+      --bg-glass: rgba(248, 251, 250, 0.75);
+      --border-color: rgba(7, 26, 43, 0.08);
+      --border-focus: rgba(25, 181, 216, 0.4);
+
+      /* Typography Colors */
+      --text-main: #071A2B;
+      --text-muted: #4A6072;
+      --text-light: #7E95A6;
+      --text-inverse: #FFFFFF;
+
+      /* Scientific Accents */
+      --navy: #071A2B;
+      --deep-blue: #0B3A5B;
+      --cyan: #19B5D8;
+      --cyan-light: #E1F8FC;
+      --botanical-green: #247A58;
+      --emerald: #0E8F6E;
+      --green-light: #E6F7F2;
+      --molecular-purple: #6657C7;
+      --purple-light: #F0EDFA;
+      --amber-accent: #E5A93C;
+
+      /* Shadows & Blur */
+      --shadow-sm: 0 2px 8px rgba(7, 26, 43, 0.04);
+      --shadow-md: 0 8px 24px rgba(7, 26, 43, 0.06);
+      --shadow-lg: 0 16px 40px rgba(7, 26, 43, 0.09);
+      --shadow-glow-cyan: 0 0 24px rgba(25, 181, 216, 0.3);
+      --shadow-glow-green: 0 0 24px rgba(14, 143, 110, 0.25);
+      --shadow-glow-purple: 0 0 24px rgba(102, 87, 199, 0.25);
+
+      /* Layout */
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --header-height: 72px;
+      --max-width: 1280px;
+
+      /* Fonts */
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-display: 'Space Grotesk', var(--font-body);
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #05101A;
+      --bg-secondary: #0A1B2A;
+      --bg-tertiary: #0F2538;
+      --bg-card: rgba(10, 27, 42, 0.85);
+      --bg-glass: rgba(5, 16, 26, 0.85);
+      --border-color: rgba(255, 255, 255, 0.09);
+      --border-focus: rgba(25, 181, 216, 0.5);
+
+      --text-main: #F1F6FA;
+      --text-muted: #9BB3C7;
+      --text-light: #5F7A92;
+
+      --cyan-light: rgba(25, 181, 216, 0.15);
+      --green-light: rgba(14, 143, 110, 0.15);
+      --purple-light: rgba(102, 87, 199, 0.2);
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    ::selection {
+      background: var(--cyan);
+      color: #FFFFFF;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, .font-display {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      outline: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==========================================================================
+       2. CUSTOM CURSOR & AMBIENT SCIENTIFIC GLOW
+       ========================================================================== */
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      border: 1.5px solid var(--cyan);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.05s ease-out;
+      z-index: 99999;
+      display: none;
+    }
+
+    .custom-cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background-color: var(--emerald);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 99999;
+      display: none;
+    }
+
+    .cursor-active {
+      width: 48px;
+      height: 48px;
+      background-color: rgba(25, 181, 216, 0.12);
+      border-color: var(--emerald);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .custom-cursor, .custom-cursor-dot { display: block; }
+    }
+
+    /* Ambient Background Grid Pattern */
+    .bg-grid-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(25, 181, 216, 0.03) 0%, transparent 80%),
+        linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+      background-size: 100% 100%, 48px 48px, 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    /* ==========================================================================
+       3. LOADING SCREEN (MOLECULAR SYNTHESIS)
+       ========================================================================== */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #071A2B;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+      color: #FFFFFF;
+    }
+
+    #loader.loaded {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-canvas-box {
+      width: 160px;
+      height: 160px;
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .loader-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, #19B5D8, #0E8F6E, #6657C7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .loader-sub {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #9BB3C7;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .loader-bar-track {
+      width: 200px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      margin-top: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .loader-bar-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #19B5D8, #0E8F6E);
+      border-radius: 4px;
+      animation: loadFill 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes loadFill {
+      0% { width: 0%; }
+      60% { width: 75%; }
+      100% { width: 100%; }
+    }
+
+    /* ==========================================================================
+       4. NAVIGATION & HEADER
+       ========================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      transition: var(--transition-smooth);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-logo-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--botanical-green), var(--cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: var(--shadow-glow-cyan);
+    }
+
+    .brand-logo span.tag {
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: var(--purple-light);
+      color: var(--molecular-purple);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--emerald);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--emerald);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover::after, .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .theme-toggle-btn, .mobile-toggle-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      transition: var(--transition-smooth);
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-enter-lab {
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, var(--deep-blue), var(--emerald));
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(14, 143, 110, 0.25);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-enter-lab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(14, 143, 110, 0.35);
+    }
+
+    .mobile-toggle-btn {
+      display: none;
+    }
+
+    /* Scroll progress & Chapter tracker */
+    .scroll-progress-bar {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--botanical-green), var(--cyan), var(--molecular-purple));
+      width: 0%;
+      z-index: 1001;
+      transition: width 0.1s linear;
+    }
+
+    .chapter-indicator {
+      position: fixed;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      z-index: 900;
+      padding: 12px 8px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .chapter-node {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--text-light);
+      opacity: 0.4;
+      transition: var(--transition-smooth);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .chapter-node.active {
+      opacity: 1;
+      background: var(--emerald);
+      transform: scale(1.4);
+      box-shadow: 0 0 10px var(--emerald);
+    }
+
+    .chapter-node:hover::before {
+      content: attr(data-label);
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      white-space: nowrap;
+      font-family: var(--font-mono);
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       5. COMMON UI COMPONENTS & BADGES
+       ========================================================================== */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-plant {
+      background: var(--green-light);
+      color: var(--botanical-green);
+      border: 1px solid rgba(36, 122, 88, 0.2);
+    }
+
+    .badge-science {
+      background: var(--cyan-light);
+      color: #0B7A94;
+      border: 1px solid rgba(25, 181, 216, 0.3);
+    }
+
+    .badge-chem {
+      background: var(--purple-light);
+      color: var(--molecular-purple);
+      border: 1px solid rgba(102, 87, 199, 0.25);
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 60px auto;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--emerald);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .btn-primary {
+      padding: 12px 28px;
+      border-radius: var(--radius-full);
+      background: var(--emerald);
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 16px rgba(14, 143, 110, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: #0B795D;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(14, 143, 110, 0.4);
+    }
+
+    .btn-secondary {
+      padding: 12px 28px;
+      border-radius: var(--radius-full);
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: var(--cyan-light);
+    }
+
+    .btn-purple {
+      background: var(--molecular-purple);
+      color: #FFFFFF;
+    }
+    .btn-purple:hover {
+      background: #5445B3;
+      box-shadow: var(--shadow-glow-purple);
+    }
+
+    /* Card styling */
+    .glass-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(12px);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card:hover {
+      border-color: var(--border-focus);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ==========================================================================
+       6. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: calc(var(--header-height) + 40px);
+      padding-bottom: 80px;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 20px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, var(--emerald) 0%, var(--cyan) 50%, var(--molecular-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 580px;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats-row {
+      display: flex;
+      gap: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .stat-item h3 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--text-main);
+      font-family: var(--font-display);
+    }
+
+    .stat-item p {
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Hero Interactive Visualization Canvas Box */
+    .hero-visual-box {
+      position: relative;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      border-radius: var(--radius-lg);
+    }
+
+    .hero-center-graphic {
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+      text-align: center;
+    }
+
+    .hero-herb-illustration {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(14, 143, 110, 0.15) 0%, rgba(25, 181, 216, 0.05) 70%, transparent 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      border: 1px dashed rgba(14, 143, 110, 0.3);
+      animation: pulseGlow 4s infinite ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(14, 143, 110, 0.1); }
+      50% { transform: scale(1.04); box-shadow: 0 0 35px rgba(25, 181, 216, 0.25); }
+    }
+
+    .floating-molecule-pill {
+      position: absolute;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-md);
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(8px);
+      pointer-events: auto;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .floating-molecule-pill:hover {
+      transform: translateY(-4px) scale(1.05);
+      border-color: var(--molecular-purple);
+    }
+
+    .pill-1 { top: 12%; left: 8%; }
+    .pill-2 { bottom: 15%; left: 4%; }
+    .pill-3 { top: 20%; right: 4%; }
+    .pill-4 { bottom: 12%; right: 12%; }
+
+    /* ==========================================================================
+       7. OPENING STORY: "BEFORE WE TALK ABOUT CHEMISTRY..."
+       ========================================================================== */
+    .opening-story-section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .zoom-timeline-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .zoom-timeline-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .zoom-timeline-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--botanical-green), var(--cyan), var(--molecular-purple));
+      z-index: 0;
+    }
+
+    .zoom-step-card {
+      position: relative;
+      z-index: 1;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+
+    .zoom-step-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-md);
+    }
+
+    .step-icon-bubble {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      margin: 0 auto 16px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      background: var(--bg-primary);
+      border: 2px solid var(--border-color);
+      transition: var(--transition-smooth);
+    }
+
+    .zoom-step-card:hover .step-icon-bubble {
+      border-color: var(--cyan);
+      background: var(--cyan-light);
+    }
+
+    .zoom-step-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .zoom-step-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       8. THE QUESTION: "WHY DOES A PLANT HAVE ITS UNIQUE PROPERTIES?"
+       ========================================================================== */
+    .question-section {
+      padding: 100px 0;
+      background: linear-gradient(180deg, transparent 0%, var(--bg-tertiary) 50%, transparent 100%);
+    }
+
+    .question-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .question-interactive-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .question-item {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .question-item:hover, .question-item.active {
+      border-color: var(--emerald);
+      background: var(--bg-card);
+      box-shadow: var(--shadow-sm);
+      transform: translateX(8px);
+    }
+
+    .question-item .q-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .question-item .q-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--emerald);
+      background: var(--green-light);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+    }
+
+    .question-item .q-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .question-item .q-icon {
+      color: var(--text-light);
+      transition: transform 0.3s ease;
+    }
+
+    .question-item.active .q-icon {
+      transform: rotate(90deg);
+      color: var(--emerald);
+    }
+
+    .question-preview-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .preview-body h3 {
+      font-size: 1.65rem;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .preview-body p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .preview-chem-formula {
+      background: var(--purple-light);
+      border: 1px solid rgba(102, 87, 199, 0.2);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      font-family: var(--font-mono);
+      color: var(--molecular-purple);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* ==========================================================================
+       9. THE HERBIA JOURNEY (8-STEP FRAMEWORK)
+       ========================================================================== */
+    .journey-section {
+      padding: 100px 0;
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .journey-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .journey-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--cyan);
+      box-shadow: var(--shadow-md);
+    }
+
+    .journey-card .j-step {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+
+    .journey-card .j-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .journey-card .j-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       10. VIETNAM — THE HERBAL LANDSCAPE (INTERACTIVE MAP)
+       ========================================================================== */
+    .map-section {
+      padding: 100px 0;
+      background: var(--bg-tertiary);
+    }
+
+    .map-container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .map-svg-wrap {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .region-card-info {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .region-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .region-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .region-climate {
+      font-size: 0.9rem;
+      color: var(--emerald);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .region-plants-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .region-plant-tag {
+      background: var(--green-light);
+      color: var(--botanical-green);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    /* Map Interactive SVG Zones */
+    .vn-region-path {
+      cursor: pointer;
+      transition: fill 0.3s ease, stroke 0.3s ease, transform 0.3s ease;
+    }
+
+    .vn-region-path:hover, .vn-region-path.active {
+      fill: var(--emerald) !important;
+      stroke: #FFFFFF !important;
+      stroke-width: 2px;
+      filter: drop-shadow(0 0 8px rgba(14, 143, 110, 0.5));
+    }
+
+    /* ==========================================================================
+       11. HERBAL STORIES — 12 PLANTS SHOWCASE & FILTER
+       ========================================================================== */
+    .plants-section {
+      padding: 100px 0;
+    }
+
+    .plants-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 36px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px 24px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-tab-btn {
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      transition: var(--transition-smooth);
+    }
+
+    .filter-tab-btn:hover, .filter-tab-btn.active {
+      background: var(--emerald);
+      color: #FFFFFF;
+      border-color: var(--emerald);
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 9px 16px 9px 38px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      font-size: 0.88rem;
+      outline: none;
+      transition: var(--transition-smooth);
+    }
+
+    .search-box input:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(25, 181, 216, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      pointer-events: none;
+    }
+
+    .plants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .plant-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .plant-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--emerald);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .plant-card-chapter {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--emerald);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .plant-card-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .plant-card-latin {
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .plant-card-pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .plant-compound-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--purple-light);
+      color: var(--molecular-purple);
+      font-weight: 600;
+    }
+
+    .plant-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--emerald);
+    }
+
+    /* ==========================================================================
+       12. FULLSCREEN STORY MODE MODAL (CHAPTER DETAIL)
+       ========================================================================== */
+    .story-modal {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-primary);
+      z-index: 9990;
+      overflow-y: auto;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .story-modal.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .modal-nav-bar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 64px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      z-index: 100;
+    }
+
+    .modal-close-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .modal-close-btn:hover {
+      background: #E53E3E;
+      color: #FFFFFF;
+      border-color: #E53E3E;
+    }
+
+    .story-container {
+      max-width: 900px;
+      margin: 40px auto 100px auto;
+      padding: 0 24px;
+    }
+
+    .story-scene-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .scene-number {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--emerald);
+      margin-bottom: 8px;
+      letter-spacing: 1.5px;
+    }
+
+    .scene-heading {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    .scene-content {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .interactive-pathway {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .pathway-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+    }
+
+    .pathway-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--purple-light);
+      color: var(--molecular-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+
+    .pathway-text h4 {
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+      color: var(--text-main);
+    }
+
+    .pathway-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       13. CHEMICAL STRUCTURE LAB & FUNCTIONAL GROUP HIGHLIGHTER
+       ========================================================================== */
+    .lab-section {
+      padding: 100px 0;
+      background: var(--bg-tertiary);
+    }
+
+    .lab-interface {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .lab-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-right: 1px solid var(--border-color);
+      padding-right: 24px;
+    }
+
+    .lab-compound-btn {
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      text-align: left;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lab-compound-btn:hover, .lab-compound-btn.active {
+      border-color: var(--molecular-purple);
+      background: var(--purple-light);
+      transform: translateX(4px);
+    }
+
+    .lab-compound-btn .c-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .lab-compound-btn .c-origin {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    .lab-viewport {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .lab-viewport-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .lab-svg-stage {
+      min-height: 280px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      position: relative;
+    }
+
+    .lab-controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .lab-toggle-pill {
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .lab-toggle-pill:hover, .lab-toggle-pill.active {
+      background: var(--molecular-purple);
+      color: #FFFFFF;
+      border-color: var(--molecular-purple);
+    }
+
+    .lab-data-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .lab-data-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+    }
+
+    .lab-data-card .d-label {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      color: var(--text-light);
+      text-transform: uppercase;
+    }
+
+    .lab-data-card .d-val {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+    }
+
+    /* ==========================================================================
+       14. "WHY?" SCIENTIFIC EXPLAINER ACCORDION / TOOL
+       ========================================================================== */
+    .why-section {
+      padding: 100px 0;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .why-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: var(--transition-smooth);
+    }
+
+    .why-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--cyan);
+    }
+
+    .why-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .btn-why-badge {
+      background: var(--cyan-light);
+      color: #0B7A94;
+      border: 1px solid var(--cyan);
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-why-badge:hover {
+      background: var(--cyan);
+      color: #FFFFFF;
+    }
+
+    .why-question {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .why-answer {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .why-card.open .why-answer {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================================
+       15. MOLECULE BATTLE (COMPARISON TOOL)
+       ========================================================================== */
+    .compare-section {
+      padding: 100px 0;
+      background: var(--bg-tertiary);
+    }
+
+    .compare-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .compare-selectors-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 36px;
+    }
+
+    .select-dropdown {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .compare-versus-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--purple-light);
+      color: var(--molecular-purple);
+      font-weight: 800;
+      font-family: var(--font-display);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .compare-table th, .compare-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.92rem;
+    }
+
+    .compare-table th {
+      color: var(--text-light);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      width: 25%;
+    }
+
+    .compare-table td {
+      color: var(--text-main);
+      width: 37.5%;
+    }
+
+    /* ==========================================================================
+       16. VIRTUAL EXTRACTION LAB
+       ========================================================================== */
+    .extraction-section {
+      padding: 100px 0;
+    }
+
+    .extraction-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 40px;
+    }
+
+    .extraction-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .input-group label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .solvent-btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .solvent-btn {
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: var(--transition-smooth);
+    }
+
+    .solvent-btn:hover, .solvent-btn.active {
+      background: var(--emerald);
+      color: #FFFFFF;
+      border-color: var(--emerald);
+    }
+
+    .extraction-display {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .yield-bar-wrap {
+      margin: 20px 0;
+    }
+
+    .yield-bar-track {
+      height: 12px;
+      background: var(--bg-tertiary);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .yield-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--botanical-green), var(--cyan));
+      border-radius: var(--radius-full);
+      transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ==========================================================================
+       17. CHEMISTRY GAME: MATCH THE MOLECULE
+       ========================================================================== */
+    .game-section {
+      padding: 100px 0;
+      background: var(--bg-tertiary);
+    }
+
+    .game-board {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .match-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .match-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .match-card {
+      padding: 16px 20px;
+      background: var(--bg-secondary);
+      border: 1.5px dashed var(--border-color);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .match-card:hover {
+      border-color: var(--cyan);
+      transform: scale(1.02);
+    }
+
+    .match-card.selected {
+      border-color: var(--cyan);
+      background: var(--cyan-light);
+      border-style: solid;
+    }
+
+    .match-card.matched {
+      border-color: var(--emerald);
+      background: var(--green-light);
+      color: var(--botanical-green);
+      border-style: solid;
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       18. MYTH VS MOLECULE
+       ========================================================================== */
+    .myth-section {
+      padding: 100px 0;
+    }
+
+    .myth-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+
+    .myth-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      position: relative;
+    }
+
+    .myth-verdict {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .verdict-myth {
+      background: #FEE2E2;
+      color: #DC2626;
+    }
+
+    .verdict-science {
+      background: #D1FAE5;
+      color: #059669;
+    }
+
+    .verdict-partial {
+      background: #FEF3C7;
+      color: #D97706;
+    }
+
+    .myth-claim {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .myth-explanation {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       19. CHEMISTRY QUIZ (10 SCIENTIFIC QUESTIONS)
+       ========================================================================== */
+    .quiz-section {
+      padding: 100px 0;
+      background: var(--bg-tertiary);
+    }
+
+    .quiz-container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .quiz-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .quiz-question-box h3 {
+      font-size: 1.35rem;
+      color: var(--text-main);
+      margin-bottom: 24px;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .quiz-opt-btn {
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      text-align: left;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-main);
+      transition: var(--transition-smooth);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .quiz-opt-btn:hover {
+      border-color: var(--emerald);
+      background: var(--green-light);
+    }
+
+    .quiz-opt-btn.correct {
+      background: #D1FAE5;
+      border-color: #059669;
+      color: #065F46;
+      font-weight: 700;
+    }
+
+    .quiz-opt-btn.wrong {
+      background: #FEE2E2;
+      border-color: #DC2626;
+      color: #991B1B;
+    }
+
+    .quiz-feedback {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      display: none;
+      font-size: 0.88rem;
+    }
+
+    /* ==========================================================================
+       20. BUILD YOUR OWN MOLECULE STORY
+       ========================================================================== */
+    .story-builder-section {
+      padding: 100px 0;
+    }
+
+    .story-builder-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .builder-step-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .builder-select {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      font-size: 0.88rem;
+      outline: none;
+    }
+
+    .builder-result-card {
+      background: linear-gradient(135deg, rgba(14, 143, 110, 0.05), rgba(102, 87, 199, 0.05));
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      position: relative;
+    }
+
+    .builder-output-text {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-main);
+      font-style: italic;
+    }
+
+    /* ==========================================================================
+       21. PERSONAL STORY — QUANG HẢI
+       ========================================================================== */
+    .about-section {
+      padding: 100px 0;
+      background: var(--bg-tertiary);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 48px;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-avatar-card {
+      background: linear-gradient(135deg, var(--navy), var(--deep-blue));
+      border-radius: var(--radius-md);
+      padding: 36px 24px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .avatar-icon-ring {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      margin: 0 auto 20px auto;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      box-shadow: var(--shadow-glow-cyan);
+    }
+
+    .about-skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .skill-tag {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       22. FOOTER & SCIENTIFIC SAFETY DISCLAIMER
+       ========================================================================== */
+    .site-footer {
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 80px 0 40px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      color: #9BB3C7;
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.95rem;
+      font-family: var(--font-mono);
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+      color: var(--cyan);
+      text-transform: uppercase;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links-list a {
+      color: #9BB3C7;
+      font-size: 0.88rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links-list a:hover {
+      color: #FFFFFF;
+    }
+
+    .disclaimer-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+
+    .disclaimer-card h5 {
+      color: var(--amber-accent);
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .disclaimer-card p {
+      font-size: 0.82rem;
+      color: #9BB3C7;
+      line-height: 1.5;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: #5F7A92;
+    }
+
+    /* ==========================================================================
+       23. RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid, .question-split, .map-container, .lab-interface, .about-grid, .extraction-box {
+        grid-template-columns: 1fr;
+      }
+      .journey-grid, .builder-step-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .lab-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 20px;
+        padding-right: 0;
+      }
+      .chapter-indicator {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      .nav-links, .btn-enter-lab {
+        display: none;
+      }
+      .mobile-toggle-btn {
+        display: flex;
+      }
+      .zoom-timeline-steps {
+        grid-template-columns: 1fr;
+      }
+      .zoom-timeline-steps::before {
+        display: none;
+      }
+      .match-columns, .why-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Scientific Cursor -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-dot" id="cursor-dot"></div>
+
+  <!-- Background Ambience Overlay -->
+  <div class="bg-grid-overlay"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="progressBar"></div>
+
+  <!-- Fixed Chapter Indicator (Desktop) -->
+  <aside class="chapter-indicator" aria-label="Timeline Indicator">
+    <div class="chapter-node active" data-label="01. Hero" onclick="scrollToSection('hero')"></div>
+    <div class="chapter-node" data-label="02. Story" onclick="scrollToSection('story')"></div>
+    <div class="chapter-node" data-label="03. Question" onclick="scrollToSection('question')"></div>
+    <div class="chapter-node" data-label="04. Geography" onclick="scrollToSection('landscape')"></div>
+    <div class="chapter-node" data-label="05. Plants" onclick="scrollToSection('plants')"></div>
+    <div class="chapter-node" data-label="06. Lab" onclick="scrollToSection('lab')"></div>
+    <div class="chapter-node" data-label="07. Experiments" onclick="scrollToSection('experiments')"></div>
+    <div class="chapter-node" data-label="08. About" onclick="scrollToSection('about')"></div>
+  </aside>
+
+  <!-- Molecular Synthesis Loader -->
+  <div id="loader">
+    <div class="loader-canvas-box">
+      <svg viewBox="0 0 100 100" width="100%" height="100%">
+        <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(25, 181, 216, 0.2)" stroke-width="2" stroke-dasharray="4,4" />
+        <circle cx="50" cy="50" r="26" fill="none" stroke="rgba(14, 143, 110, 0.3)" stroke-width="2" />
+        <!-- Rotating atoms -->
+        <circle cx="50" cy="12" r="5" fill="#19B5D8">
+          <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="24" cy="50" r="4" fill="#0E8F6E">
+          <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="-360 50 50" dur="2.4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="76" cy="50" r="4" fill="#6657C7">
+          <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <path d="M42 50 L48 56 L58 44" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+    <div class="loader-title">HERBIA</div>
+    <div class="loader-sub">When Vietnamese Plants Meet Chemistry</div>
+    <div class="loader-bar-track">
+      <div class="loader-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-logo-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+          </svg>
+        </div>
+        <span>HERBIA</span>
+        <span class="tag">STEM Research</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Khởi đầu</a></li>
+        <li><a href="#story" class="nav-link">Hành trình</a></li>
+        <li><a href="#landscape" class="nav-link">Địa lý Dược liệu</a></li>
+        <li><a href="#plants" class="nav-link">12 Loài cây</a></li>
+        <li><a href="#lab" class="nav-link">Phòng Thí nghiệm</a></li>
+        <li><a href="#experiments" class="nav-link">Tương tác & Quiz</a></li>
+        <li><a href="#about" class="nav-link">Tác giả</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" title="Chuyển đổi giao diện Sáng / Tối">
+          <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <a href="#lab" class="btn-enter-lab">
+          <span>Khám phá Lab</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       SECTION 01: HERO
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="badge badge-plant">🌿 Personal STEM Exhibition</span>
+            <span class="badge badge-chem" style="margin-left: 8px;">⚗️ Organic Phytochemistry</span>
+          </div>
+          <h1 class="hero-title">
+            Mỗi loài cây một câu chuyện.<br />
+            <span class="gradient-text">Mỗi phân tử một lời giải.</span>
+          </h1>
+          <p class="hero-description">
+            Đằng sau sắc vàng của củ nghệ, vị cay của củ gừng hay hương thơm của nhánh quế là cả một vũ trụ liên kết hóa học. Chào mừng bạn đến với triển lãm số kết nối tri thức thực vật học Việt Nam với thế giới hóa học phân tử.
+          </p>
+          <div class="hero-actions">
+            <a href="#story" class="btn-primary">
+              <span>Bắt đầu hành trình</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#lab" class="btn-secondary">
+              <span>Vào Molecular Lab</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </a>
+          </div>
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <h3 class="counter" data-target="12">12</h3>
+              <p>Loài cây dược liệu</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="counter" data-target="24">24+</h3>
+              <p>Hợp chất phân tử</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="counter" data-target="6">6</h3>
+              <p>Vùng sinh thái VN</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="counter" data-target="100">100%</h3>
+              <p>Cơ sở dữ liệu mở</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Parallax Hero Canvas Visual -->
+        <div class="hero-visual-box" id="heroVisualBox">
+          <canvas id="hero-canvas"></canvas>
+          <div class="hero-center-graphic">
+            <div class="hero-herb-illustration">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="1.5">
+                <path d="M12 2L12 22"/>
+                <path d="M12 7C8 7 4 10 4 14C4 18 8 21 12 21C16 21 20 18 20 14C20 10 16 7 12 7Z"/>
+                <path d="M12 12C10 12 8 13.5 8 15.5"/>
+                <path d="M12 10C14 10 16 11.5 16 13.5"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Dynamic Molecules orbiting -->
+          <div class="floating-molecule-pill pill-1" onclick="openLabCompound('curcumin')">
+            <span style="color:var(--amber-accent)">●</span> Curcumin (C₂₁H₂₀O₆)
+          </div>
+          <div class="floating-molecule-pill pill-2" onclick="openLabCompound('gingerol')">
+            <span style="color:var(--emerald)">●</span> 6-Gingerol (C₁₇H₂₆O₄)
+          </div>
+          <div class="floating-molecule-pill pill-3" onclick="openLabCompound('cinnamaldehyde')">
+            <span style="color:var(--molecular-purple)">●</span> Cinnamaldehyde (C₉H₈O)
+          </div>
+          <div class="floating-molecule-pill pill-4" onclick="openLabCompound('egcg')">
+            <span style="color:var(--cyan)">●</span> EGCG (C₂₂H₁₈O₁₁)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 02: OPENING STORY
+       ========================================================================= -->
+  <section class="opening-story-section" id="story">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+          Chương mở đầu
+        </div>
+        <h2 class="section-title">Trước khi nói về Hóa học...</h2>
+        <p class="section-desc">
+          Hãy tưởng tượng bạn đang dạo bước trong một khu vườn thảo mộc Việt Nam sau cơn mưa rào. Bạn chạm tay vào củ nghệ, nhánh gừng, lá tía tô, vỏ quế. Chúng khác nhau về sắc diện, mùi hương và vị giác. Nhưng tại sao?
+        </p>
+      </div>
+
+      <div class="zoom-timeline-box">
+        <div class="zoom-timeline-steps">
+          <div class="zoom-step-card">
+            <div class="step-icon-bubble" style="color: var(--botanical-green)">🌿</div>
+            <h4 class="zoom-step-title">01. Khu vườn & Cây</h4>
+            <p class="zoom-step-text">Thảo dược hấp thụ ánh sáng, khoáng chất và nước từ thổ nhưỡng Việt Nam để tổng hợp chất sống.</p>
+          </div>
+          <div class="zoom-step-card">
+            <div class="step-icon-bubble" style="color: var(--emerald)">🍃</div>
+            <h4 class="zoom-step-title">02. Mô & Tế bào</h4>
+            <p class="zoom-step-text">Các không bào, lục lạp và mô tiết tích lũy các hợp chất thứ cấp (secondary metabolites) để tự vệ và thích nghi.</p>
+          </div>
+          <div class="zoom-step-card">
+            <div class="step-icon-bubble" style="color: var(--cyan)">🔬</div>
+            <h4 class="zoom-step-title">03. Hoạt chất</h4>
+            <p class="zoom-step-text">Các nhóm polyphenol, terpenoid, alkaloid, flavonoid mang đặc tính sinh học và vật lý riêng biệt.</p>
+          </div>
+          <div class="zoom-step-card">
+            <div class="step-icon-bubble" style="color: var(--molecular-purple)">⚛️</div>
+            <h4 class="zoom-step-title">04. Cấu trúc Phân tử</h4>
+            <p class="zoom-step-text">Mỗi liên kết đôi, nhóm -OH hay vòng thơm quyết định cách phân tử hấp thụ ánh sáng và tương tác với thụ thể.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 03: THE QUESTION
+       ========================================================================= -->
+  <section class="question-section" id="question">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Truy vấn Khoa học</div>
+        <h2 class="section-title">Tại sao một loài cây lại mang đặc tính riêng?</h2>
+        <p class="section-desc">Chọn một câu hỏi bên dưới để xem lời giải thích từ góc nhìn cấu trúc phân tử hóa học.</p>
+      </div>
+
+      <div class="question-split">
+        <div class="question-interactive-list">
+          <div class="question-item active" onclick="showQuestionDetail(0)">
+            <div class="q-left">
+              <span class="q-num">Q.01</span>
+              <span class="q-text">Tại sao củ nghệ lại có màu vàng rực rỡ?</span>
+            </div>
+            <div class="q-icon">→</div>
+          </div>
+          <div class="question-item" onclick="showQuestionDetail(1)">
+            <div class="q-left">
+              <span class="q-num">Q.02</span>
+              <span class="q-text">Tại sao gừng lại cay và làm ấm cơ thể?</span>
+            </div>
+            <div class="q-icon">→</div>
+          </div>
+          <div class="question-item" onclick="showQuestionDetail(2)">
+            <div class="q-left">
+              <span class="q-num">Q.03</span>
+              <span class="q-text">Tại sao vỏ quế có mùi thơm ấm ngọt đặc trưng?</span>
+            </div>
+            <div class="q-icon">→</div>
+          </div>
+          <div class="question-item" onclick="showQuestionDetail(3)">
+            <div class="q-left">
+              <span class="q-num">Q.04</span>
+              <span class="q-text">Tại sao trà xanh lại có vị chát và hậu ngọt?</span>
+            </div>
+            <div class="q-icon">→</div>
+          </div>
+          <div class="question-item" onclick="showQuestionDetail(4)">
+            <div class="q-left">
+              <span class="q-num">Q.05</span>
+              <span class="q-text">Tại sao lá tía tô có hương thơm tinh dầu ấm nồng?</span>
+            </div>
+            <div class="q-icon">→</div>
+          </div>
+        </div>
+
+        <div class="question-preview-panel" id="questionPreviewPanel">
+          <div>
+            <div class="preview-header">
+              <span class="badge badge-chem" id="qBadge">Hóa học màu sắc</span>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-light);" id="qHerb">Nghệ vàng (Curcuma longa)</span>
+            </div>
+            <div class="preview-body">
+              <h3 id="qTitle">Hệ liên hợp nối đôi kéo dài (Extended Conjugated System)</h3>
+              <p id="qDesc">
+                Phân tử <strong>Curcumin</strong> sở hữu chuỗi liên kết đôi - đơn xen kẽ dài nối giữa hai vòng phenol. Hệ liên hợp electron pi này làm giảm khoảng cách năng lượng HOMO-LUMO, khiến phân tử hấp thụ mạnh ánh sáng vùng xanh lam (420–430 nm) và phản xạ dải màu vàng cam tới mắt người xem.
+              </p>
+            </div>
+          </div>
+          <div class="preview-chem-formula">
+            <span id="qFormula">Curcumin: C₂₁H₂₀O₆ | M = 368.38 g/mol</span>
+            <button onclick="openLabCompound('curcumin')" class="badge badge-science" style="cursor: pointer;">Xem cấu trúc 3D</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 04: THE HERBIA JOURNEY (8 STEPS)
+       ========================================================================= -->
+  <section class="journey-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Phương pháp luận STEM</div>
+        <h2 class="section-title">Hành trình Khám phá Khoa học HERBIA</h2>
+        <p class="section-desc">8 bước tiếp cận chuẩn mực từ kinh nghiệm bản địa đến bằng chứng thực nghiệm hóa học phân tử.</p>
+      </div>
+
+      <div class="journey-grid">
+        <div class="journey-card">
+          <div class="j-step">01. DISCOVER</div>
+          <div class="j-title">Khám phá Thực vật</div>
+          <div class="j-desc">Định danh loài cây bản địa và tìm hiểu kinh nghiệm dân gian lưu truyền trong y học cổ truyền.</div>
+        </div>
+        <div class="journey-card">
+          <div class="j-step">02. OBSERVE</div>
+          <div class="j-title">Quan sát Cảm quan</div>
+          <div class="j-desc">Ghi nhận màu sắc, vị giác, độ nhớt, tinh dầu và khả năng bay hơi của từng bộ phận dùng.</div>
+        </div>
+        <div class="journey-card">
+          <div class="j-step">03. EXTRACT</div>
+          <div class="j-title">Chiết tách Hoạt chất</div>
+          <div class="j-desc">Áp dụng dung môi phù hợp (nước, cồn, dầu) dựa trên độ phân cực để thu hồi cao chiết.</div>
+        </div>
+        <div class="journey-card">
+          <div class="j-step">04. IDENTIFY</div>
+          <div class="j-title">Định danh Hợp chất</div>
+          <div class="j-desc">Phân tích sắc ký (HPLC, GC-MS) để xác định thành phần đơn chất và hàm lượng chính.</div>
+        </div>
+        <div class="journey-card">
+          <div class="j-step">05. UNDERSTAND</div>
+          <div class="j-title">Cấu trúc & Nhóm chức</div>
+          <div class="j-desc">Mổ xẻ các nhóm -OH phenol, -C=O, liên kết đôi và hiệu ứng cộng hưởng điện tử.</div>
+        </div>
+        <div class="journey-card">
+          <div class="j-step">06. CONNECT</div>
+          <div class="j-title">Hoạt tính Sinh học</div>
+          <div class="j-desc">Liên kết cấu trúc với khả năng dọn gốc tự do, ức chế enzyme và tương tác màng tế bào.</div>
+        </div>
+        <div class="journey-card">
+          <div class="j-step">07. APPLY</div>
+          <div class="j-title">Ứng dụng Khoa học</div>
+          <div class="j-desc">Nghiên cứu công nghệ nano dẫn thuốc, dược mỹ phẩm và bảo quản thực phẩm tự nhiên.</div>
+        </div>
+        <div class="journey-card">
+          <div class="j-step">08. QUESTION</div>
+          <div class="j-title">Đặt Câu hỏi Mở</div>
+          <div class="j-desc">Đề xuất giả thuyết nghiên cứu mới về ảnh hưởng của khí hậu, pH và thổ nhưỡng.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 05: VIETNAM — THE HERBAL LANDSCAPE
+       ========================================================================= -->
+  <section class="map-section" id="landscape">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Địa lý Dược liệu</div>
+        <h2 class="section-title">Việt Nam — Phòng Thí nghiệm Tự nhiên Sống động</h2>
+        <p class="section-desc">Với hơn 5.000 loài thực vật có công dụng y học phân bố trên 6 vùng sinh thái khí hậu đa dạng.</p>
+      </div>
+
+      <div class="map-container">
+        <!-- Interactive SVG Map of Vietnam Zones -->
+        <div class="map-svg-wrap">
+          <svg viewBox="0 0 320 600" width="100%" height="100%" style="filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08));">
+            <!-- Region 1: Tây Bắc (Northwest) -->
+            <path class="vn-region-path active" id="path-northwest" d="M80 70 L140 85 L130 135 L60 130 Z" fill="#247A58" opacity="0.85" onclick="selectRegion('northwest')"/>
+            <text x="75" y="105" font-size="10" font-weight="700" fill="#FFFFFF" pointer-events="none">Tây Bắc</text>
+
+            <!-- Region 2: Đông Bắc (Northeast) -->
+            <path class="vn-region-path" id="path-northeast" d="M140 85 L220 70 L210 140 L130 135 Z" fill="#0E8F6E" opacity="0.75" onclick="selectRegion('northeast')"/>
+            <text x="155" y="105" font-size="10" font-weight="700" fill="#FFFFFF" pointer-events="none">Đông Bắc</text>
+
+            <!-- Region 3: Đồng bằng Sông Hồng (Red River Delta) -->
+            <path class="vn-region-path" id="path-redriver" d="M130 135 L200 140 L180 190 L120 180 Z" fill="#19B5D8" opacity="0.75" onclick="selectRegion('redriver')"/>
+            <text x="135" y="165" font-size="9" font-weight="700" fill="#FFFFFF" pointer-events="none">ĐB Sông Hồng</text>
+
+            <!-- Region 4: Bắc Trung Bộ & Duyên hải (North Central) -->
+            <path class="vn-region-path" id="path-central" d="M120 180 L180 190 L210 280 L180 320 L150 240 Z" fill="#0B3A5B" opacity="0.75" onclick="selectRegion('central')"/>
+            <text x="145" y="245" font-size="9" font-weight="700" fill="#FFFFFF" pointer-events="none">Bắc Trung Bộ</text>
+
+            <!-- Region 5: Tây Nguyên (Central Highlands) -->
+            <path class="vn-region-path" id="path-highlands" d="M180 320 L235 340 L220 440 L160 410 Z" fill="#6657C7" opacity="0.75" onclick="selectRegion('highlands')"/>
+            <text x="175" y="375" font-size="10" font-weight="700" fill="#FFFFFF" pointer-events="none">Tây Nguyên</text>
+
+            <!-- Region 6: Đồng bằng Sông Cửu Long (Mekong Delta) -->
+            <path class="vn-region-path" id="path-mekong" d="M140 430 L210 445 L190 530 L110 510 Z" fill="#E5A93C" opacity="0.8" onclick="selectRegion('mekong')"/>
+            <text x="130" y="475" font-size="9" font-weight="700" fill="#FFFFFF" pointer-events="none">ĐB Sông Cửu Long</text>
+
+            <!-- Sea & islands decoration -->
+            <circle cx="260" cy="280" r="4" fill="var(--cyan)" opacity="0.6"/>
+            <circle cx="270" cy="290" r="3" fill="var(--cyan)" opacity="0.6"/>
+            <text x="235" y="305" font-size="8" fill="var(--text-light)">Quần đảo Hoàng Sa</text>
+
+            <circle cx="240" cy="480" r="4" fill="var(--cyan)" opacity="0.6"/>
+            <circle cx="250" cy="495" r="3" fill="var(--cyan)" opacity="0.6"/>
+            <text x="215" y="520" font-size="8" fill="var(--text-light)">Quần đảo Trường Sa</text>
+          </svg>
+        </div>
+
+        <!-- Region Dynamic Information Card -->
+        <div class="region-card-info" id="regionInfoBox">
+          <div>
+            <div class="region-badge-row">
+              <span class="badge badge-plant" id="regTag">Vùng sinh thái núi cao</span>
+              <span class="badge badge-science" id="regAlt">Độ cao: 1.000m - 2.500m</span>
+            </div>
+            <h3 class="region-title" id="regTitle">Tây Bắc & Dãy Hoàng Liên Sơn</h3>
+            <div class="region-climate" id="regClimate">Khí hậu ôn đới núi cao, sương mù quanh năm, biên độ nhiệt ngày đêm lớn.</div>
+            <p id="regStory" style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+              Hệ sinh thái núi cao Tây Bắc là cái nôi của các loài dược liệu ưa lạnh quý giá như Atisô, Hà thủ ô đỏ, Đương quy và Tam thất. Điều kiện bức xạ cực tím mạnh kích thích thực vật tổng hợp nồng độ cao các hợp chất polyphenol bảo vệ tế bào.
+            </p>
+          </div>
+
+          <div>
+            <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-light); text-transform: uppercase; margin-bottom: 6px;">Dược liệu tiêu biểu:</div>
+            <div class="region-plants-list" id="regPlants">
+              <span class="region-plant-tag">Atisô (Cynarin)</span>
+              <span class="region-plant-tag">Hà thủ ô (THSG)</span>
+              <span class="region-plant-tag">Quế Yên Bái (Cinnamaldehyde)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 06: HERBAL STORIES (12 PLANTS SHOWCASE)
+       ========================================================================= -->
+  <section class="plants-section" id="plants">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Tuyển tập 12 Chương</div>
+        <h2 class="section-title">Gặp gỡ 12 Loài Dược liệu Tiêu biểu</h2>
+        <p class="section-desc">Mỗi loài cây là một phòng thí nghiệm sinh tổng hợp hoàn mỹ. Nhấp vào bất kỳ cây nào để mở chương nghiên cứu chi tiết.</p>
+      </div>
+
+      <!-- Filter and Search Bar -->
+      <div class="plants-filter-bar">
+        <div class="filter-tabs">
+          <button class="filter-tab-btn active" onclick="filterPlants('all')">Tất cả (12)</button>
+          <button class="filter-tab-btn" onclick="filterPlants('Polyphenol')">Polyphenol</button>
+          <button class="filter-tab-btn" onclick="filterPlants('Terpenoid')">Terpenoid / Tinh dầu</button>
+          <button class="filter-tab-btn" onclick="filterPlants('Saponin')">Saponin / Glycoside</button>
+          <button class="filter-tab-btn" onclick="filterPlants('Alkaloid')">Alkaloid</button>
+        </div>
+
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="plantSearchInput" placeholder="Tìm tên cây hoặc hợp chất..." oninput="handlePlantSearch()" />
+        </div>
+      </div>
+
+      <!-- Plants Grid (12 Plants) -->
+      <div class="plants-grid" id="plantsGrid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 07: CHEMICAL STRUCTURE LAB
+       ========================================================================= -->
+  <section class="lab-section" id="lab">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Molecular Visualization</div>
+        <h2 class="section-title">Phòng Thí nghiệm Cấu trúc Phân tử</h2>
+        <p class="section-desc">Khám phá chi tiết công thức không gian, nhóm chức hóa học và đặc tính phân tử tương tác với hệ sinh học.</p>
+      </div>
+
+      <div class="lab-interface">
+        <!-- Sidebar Selectors -->
+        <div class="lab-sidebar" id="labCompoundList">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Viewport Display -->
+        <div class="lab-viewport">
+          <div>
+            <div class="lab-viewport-header">
+              <div>
+                <span class="badge badge-chem" id="labCompClass">Polyphenol Curcuminoid</span>
+                <h3 style="font-size: 1.8rem; margin-top: 6px;" id="labCompName">Curcumin</h3>
+                <div style="font-size: 0.88rem; color: var(--text-light); font-style: italic;" id="labCompOrigin">Trích xuất từ củ Nghệ (Curcuma longa)</div>
+              </div>
+              <a id="labPubchemLink" href="https://pubchem.ncbi.nlm.nih.gov/compound/969516" target="_blank" class="btn-secondary" style="padding: 6px 14px; font-size: 0.8rem;">
+                <span>PubChem CID: 969516</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+
+            <!-- Molecular 2D Interactive SVG Stage -->
+            <div class="lab-svg-stage" id="labSvgStage">
+              <!-- Rendered by JS -->
+            </div>
+
+            <!-- Functional Group Highlights Controls -->
+            <div class="lab-controls-bar" id="labGroupControls">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Molecular Data Grid -->
+          <div class="lab-data-grid">
+            <div class="lab-data-card">
+              <div class="d-label">Công thức phân tử</div>
+              <div class="d-val" id="labFormula">C₂₁H₂₀O₆</div>
+            </div>
+            <div class="lab-data-card">
+              <div class="d-label">Khối lượng mol</div>
+              <div class="d-val" id="labMass">368.38 g/mol</div>
+            </div>
+            <div class="lab-data-card">
+              <div class="d-label">Độ tan (LogP)</div>
+              <div class="d-val" id="labLogP">3.2 (Tan kém trong nước)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 08: "WHY?" SCIENTIFIC EXPLAINER
+       ========================================================================= -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Micro-Explanations</div>
+        <h2 class="section-title">Hỏi đáp "Tại sao?" — Giải mã Hóa học Đằng sau</h2>
+        <p class="section-desc">Không chỉ biết "Cái gì", mà hiểu tường tận "Tại sao" từ cơ chế phân tử hữu cơ cấp độ THPT.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-header">
+            <span class="badge badge-plant">Củ Gừng</span>
+            <button class="btn-why-badge" onclick="toggleWhy(this)">TẠI SAO? ▼</button>
+          </div>
+          <div class="why-question">Tại sao gừng khô lại cay gắt hơn gừng tươi?</div>
+          <div class="why-answer">
+            Trong gừng tươi, hợp chất cay chính là <strong>[6]-gingerol</strong> có nhóm hydroxyl (-OH) ở vị trí beta. Khi phơi khô hoặc đun nóng, phản ứng tách nước (dehydration) xảy ra, chuyển nhóm này thành liên kết đôi liên hợp alpha,beta-không no tạo thành <strong>[6]-shogaol</strong>. Cấu trúc shogaol có ái lực mạnh gấp 2 lần với thụ thể nhiệt TRPV1 trên lưỡi, tạo cảm giác cay nồng hơn rõ rệt.
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-header">
+            <span class="badge badge-plant">Vỏ Quế</span>
+            <button class="btn-why-badge" onclick="toggleWhy(this)">TẠI SAO? ▼</button>
+          </div>
+          <div class="why-question">Tại sao quế có mùi thơm lan tỏa cực mạnh trong không khí?</div>
+          <div class="why-answer">
+            Hoạt chất chính <strong>Cinnamaldehyde</strong> (C₉H₈O) là một aldehyde thơm có phân tử lượng nhỏ (132.16 g/mol) và áp suất hơi bão hòa cao ở nhiệt độ phòng. Nhóm formyl (-CHO) liên hợp với vòng benzene kích hoạt mạnh các thụ thể khứu giác OR51E1 của người với ngưỡng cảm nhận cực thấp.
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-header">
+            <span class="badge badge-plant">Trà Xanh</span>
+            <button class="btn-why-badge" onclick="toggleWhy(this)">TẠI SAO? ▼</button>
+          </div>
+          <div class="why-question">Tại sao trà xanh lại gây cảm giác chát se miệng?</div>
+          <div class="why-answer">
+            Hợp chất <strong>EGCG</strong> sở hữu tới 8 nhóm phenolic -OH tự do. Khi vào khoang miệng, các nhóm -OH này hình thành vô số liên kết hydro và tương tác kỵ nước với chuỗi protein giàu proline trong nước bọt (mucins), làm kết tủa protein và giảm độ bôi trơn, tạo ra cảm giác se chát (astringency) đặc trưng.
+          </div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-header">
+            <span class="badge badge-plant">Sả Chanh</span>
+            <button class="btn-why-badge" onclick="toggleWhy(this)">TẠI SAO? ▼</button>
+          </div>
+          <div class="why-question">Tại sao tinh dầu sả lại có khả năng xua đuổi côn trùng?</div>
+          <div class="why-answer">
+            Hỗn hợp đồng phân <strong>Citral (Geranial và Neral)</strong> cùng với Myrcene gây ức chế enzyme acetylcholinesterase (AChE) và làm quá tải hệ thần kinh khứu giác nhạy cảm của muỗi và côn trùng, khiến chúng mất định hướng không gian và phải tránh xa.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 09: MOLECULE BATTLE (COMPARE)
+       ========================================================================= -->
+  <section class="compare-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Phân tích Đối sánh</div>
+        <h2 class="section-title">So sánh Hóa học: Molecule Battle</h2>
+        <p class="section-desc">Đặt 2 hợp chất lên bàn cân hóa học để thấy rõ sự khác biệt về cấu trúc không gian, nhóm chức và cơ chế sinh học.</p>
+      </div>
+
+      <div class="compare-container">
+        <div class="compare-selectors-bar">
+          <select class="select-dropdown" id="compareSelectA" onchange="updateCompareTable()">
+            <option value="curcumin">Curcumin (Nghệ)</option>
+            <option value="gingerol">6-Gingerol (Gừng)</option>
+            <option value="egcg">EGCG (Trà xanh)</option>
+            <option value="cinnamaldehyde">Cinnamaldehyde (Quế)</option>
+            <option value="rosmarinic">Axit Rosmarinic (Tía tô)</option>
+            <option value="cynarin">Cynarin (Atisô)</option>
+          </select>
+
+          <div class="compare-versus-badge">VS</div>
+
+          <select class="select-dropdown" id="compareSelectB" onchange="updateCompareTable()">
+            <option value="gingerol">6-Gingerol (Gừng)</option>
+            <option value="curcumin">Curcumin (Nghệ)</option>
+            <option value="egcg" selected>EGCG (Trà xanh)</option>
+            <option value="cinnamaldehyde">Cinnamaldehyde (Quế)</option>
+            <option value="rosmarinic">Axit Rosmarinic (Tía tô)</option>
+            <option value="cynarin">Cynarin (Atisô)</option>
+          </select>
+        </div>
+
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Tiêu chí Hóa học</th>
+              <th id="compTitleA" style="color: var(--emerald); font-size: 1.1rem;">Curcumin</th>
+              <th id="compTitleB" style="color: var(--cyan); font-size: 1.1rem;">EGCG</th>
+            </tr>
+          </thead>
+          <tbody id="compareTableBody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 10: VIRTUAL EXTRACTION LAB & EXPERIMENTS
+       ========================================================================= -->
+  <section class="extraction-section" id="experiments">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Phòng Mô phỏng STEM</div>
+        <h2 class="section-title">Mô phỏng Chiết tách Dược liệu ảo</h2>
+        <p class="section-desc">Thử nghiệm lựa chọn dung môi dựa trên nguyên lý tương đồng độ phân cực "Like dissolves like".</p>
+      </div>
+
+      <div class="extraction-box">
+        <div class="extraction-inputs">
+          <div class="input-group">
+            <label>1. Chọn Mẫu Dược liệu Việt Nam:</label>
+            <select class="builder-select" id="extractHerbSelect" onchange="runExtractionSim()">
+              <option value="turmeric">Củ Nghệ (Curcuma longa)</option>
+              <option value="ginger">Củ Gừng (Zingiber officinale)</option>
+              <option value="greentea">Lá Trà xanh (Camellia sinensis)</option>
+              <option value="cinnamon">Vỏ Quế (Cinnamomum cassia)</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label>2. Chọn Dung môi Chiết tách:</label>
+            <div class="solvent-btn-grid">
+              <button class="solvent-btn active" data-sol="water" onclick="setSolvent('water', this)">💧 Nước cất (Polar)</button>
+              <button class="solvent-btn" data-sol="eth70" onclick="setSolvent('eth70', this)">🧪 Ethanol 70%</button>
+              <button class="solvent-btn" data-sol="eth96" onclick="setSolvent('eth96', this)">⚗️ Ethanol 96%</button>
+              <button class="solvent-btn" data-sol="oil" onclick="setSolvent('oil', this)">🫒 Dầu thực vật (Non-polar)</button>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>3. Nhiệt độ chiết (°C): <span id="tempVal" style="color:var(--cyan); font-family:var(--font-mono);">50°C</span></label>
+            <input type="range" min="25" max="90" value="50" style="width: 100%; accent-color: var(--emerald);" oninput="updateTemp(this.value)" />
+          </div>
+
+          <div style="font-size: 0.75rem; color: var(--text-light); font-style: italic;">
+            * Lưu ý: Đây là mô hình mô phỏng giáo dục nhằm mục đích học tập trực quan nguyên lý hóa học.
+          </div>
+        </div>
+
+        <div class="extraction-display" id="extractDisplay">
+          <div>
+            <span class="badge badge-science" id="simSolventBadge">Dung môi: Nước cất (Độ phân cực cao: ε = 80)</span>
+            <h3 style="font-size: 1.4rem; margin: 12px 0 6px 0;" id="simHerbTitle">Chiết tách Curcuminoid từ Nghệ</h3>
+            <p id="simHerbExplanation" style="font-size: 0.92rem; color: var(--text-muted);">
+              Curcumin là phân tử kỵ nước mạnh (LogP ≈ 3.2). Nước cất không thể hòa tan hiệu quả cấu trúc polyphenol này, dẫn tới hiệu suất thu hồi rất thấp.
+            </p>
+          </div>
+
+          <div class="yield-bar-wrap">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-family: var(--font-mono);">
+              <span>Hiệu suất thu hồi hoạt chất dự kiến:</span>
+              <strong id="simYieldText" style="color: var(--emerald);">12%</strong>
+            </div>
+            <div class="yield-bar-track">
+              <div class="yield-bar-fill" id="simYieldBar" style="width: 12%;"></div>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-primary); padding: 14px; border-radius: var(--radius-sm); font-size: 0.85rem; border: 1px solid var(--border-color);">
+            <strong>Đề xuất hóa học:</strong> <span id="simRecommendation">Nên sử dụng Ethanol 70% hoặc đun nấu với chất béo (dầu mè, mỡ) để tăng độ tan của Curcumin.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 11: CHEMISTRY GAME — MATCH THE MOLECULE
+       ========================================================================= -->
+  <section class="game-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Minigame Tương tác</div>
+        <h2 class="section-title">Ghép đôi Phân tử: Match the Molecule</h2>
+        <p class="section-desc">Hãy chọn 1 loài cây bên trái và ghép nối chính xác với hợp chất hóa học đặc trưng bên phải.</p>
+      </div>
+
+      <div class="game-board">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+          <div style="font-family: var(--font-mono); font-size: 0.9rem;">Điểm số: <span id="gameScore" style="color: var(--emerald); font-weight: 700;">0 / 5</span></div>
+          <button class="btn-secondary" style="padding: 6px 14px; font-size: 0.8rem;" onclick="resetMatchGame()">Chơi lại ↺</button>
+        </div>
+
+        <div class="match-columns">
+          <div class="match-list" id="matchPlantsCol">
+            <!-- Plant buttons -->
+            <div class="match-card" data-plant="turmeric" onclick="selectGamePlant('turmeric', this)">
+              <span>🌿 Củ Nghệ</span>
+              <span style="font-size: 0.8rem; color: var(--text-light);">Curcuma longa</span>
+            </div>
+            <div class="match-card" data-plant="ginger" onclick="selectGamePlant('ginger', this)">
+              <span>🌿 Củ Gừng</span>
+              <span style="font-size: 0.8rem; color: var(--text-light);">Zingiber officinale</span>
+            </div>
+            <div class="match-card" data-plant="cinnamon" onclick="selectGamePlant('cinnamon', this)">
+              <span>🌿 Vỏ Quế</span>
+              <span style="font-size: 0.8rem; color: var(--text-light);">Cinnamomum cassia</span>
+            </div>
+            <div class="match-card" data-plant="greentea" onclick="selectGamePlant('greentea', this)">
+              <span>🌿 Lá Trà xanh</span>
+              <span style="font-size: 0.8rem; color: var(--text-light);">Camellia sinensis</span>
+            </div>
+            <div class="match-card" data-plant="perilla" onclick="selectGamePlant('perilla', this)">
+              <span>🌿 Lá Tía tô</span>
+              <span style="font-size: 0.8rem; color: var(--text-light);">Perilla frutescens</span>
+            </div>
+          </div>
+
+          <div class="match-list" id="matchMoleculesCol">
+            <!-- Molecule buttons (shuffled) -->
+            <div class="match-card" data-mol="cinnamaldehyde" onclick="selectGameMolecule('cinnamaldehyde', this)">
+              <span>⚛️ Cinnamaldehyde</span>
+              <span style="font-size: 0.75rem; font-family: var(--font-mono);">Aldehyde thơm</span>
+            </div>
+            <div class="match-card" data-mol="curcumin" onclick="selectGameMolecule('curcumin', this)">
+              <span>⚛️ Curcumin</span>
+              <span style="font-size: 0.75rem; font-family: var(--font-mono);">Diferuloylmethane</span>
+            </div>
+            <div class="match-card" data-mol="rosmarinic" onclick="selectGameMolecule('rosmarinic', this)">
+              <span>⚛️ Axit Rosmarinic</span>
+              <span style="font-size: 0.75rem; font-family: var(--font-mono);">Ester caffeic</span>
+            </div>
+            <div class="match-card" data-mol="egcg" onclick="selectGameMolecule('egcg', this)">
+              <span>⚛️ Epigallocatechin Gallate (EGCG)</span>
+              <span style="font-size: 0.75rem; font-family: var(--font-mono);">Flavan-3-ol</span>
+            </div>
+            <div class="match-card" data-mol="gingerol" onclick="selectGameMolecule('gingerol', this)">
+              <span>⚛️ [6]-Gingerol</span>
+              <span style="font-size: 0.75rem; font-family: var(--font-mono);">Beta-hydroxy ketone</span>
+            </div>
+          </div>
+        </div>
+        <div id="gameStatusMessage" style="margin-top: 20px; text-align: center; font-family: var(--font-mono); font-size: 0.9rem; color: var(--emerald);">
+          Chọn một cây và một phân tử để liên kết...
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 12: MYTH VS MOLECULE
+       ========================================================================= -->
+  <section class="myth-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Khoa học & Thực chứng</div>
+        <h2 class="section-title">Quan niệm Dân gian vs Bằng chứng Hóa học</h2>
+        <p class="section-desc">Phân tích tính chính xác của các kinh nghiệm lưu truyền dưới lăng kính của hóa dược học hiện đại.</p>
+      </div>
+
+      <div class="myth-grid">
+        <div class="myth-card">
+          <span class="myth-verdict verdict-myth">⚠️ HIỂU SAI PHỔ BIẾN</span>
+          <div class="myth-claim">"Cứ uống bột nghệ pha nước là hấp thu toàn bộ Curcumin."</div>
+          <div class="myth-explanation">
+            <strong>Sự thật Hóa học:</strong> Curcumin có tính kỵ nước cực cao (LogP ~ 3.2) và bị chuyển hóa bất hoạt qua gan bởi phản ứng glucuronidation rất nhanh. Sinh khả dụng đường uống trong nước cất chưa tới 1%. Cần kết hợp với Piperine (hạt tiêu) hoặc bào chế nano để ức chế enzyme glucuronosyltransferase.
+          </div>
+        </div>
+
+        <div class="myth-card">
+          <span class="myth-verdict verdict-science">✅ CHÍNH XÁC KHOA HỌC</span>
+          <div class="myth-claim">"Uống trà xanh pha nước quá sôi sẽ bị đắng chát gắt."</div>
+          <div class="myth-explanation">
+            <strong>Sự thật Hóa học:</strong> Ở nhiệt độ trên 85°C–90°C, tốc độ hòa tan và khuếch tán của các Tannin cao phân tử và Caffeine tăng vọt lấn át các axit amin tạo ngọt như L-Theanine. Pha ở 70–80°C giúp bảo tồn cân bằng vị giác tốt hơn.
+          </div>
+        </div>
+
+        <div class="myth-card">
+          <span class="myth-verdict verdict-partial">⚖️ CẦN ĐIỀU KIỆN</span>
+          <div class="myth-claim">"Rau má giúp làm lành vết sẹo và thanh nhiệt."</div>
+          <div class="myth-explanation">
+            <strong>Sự thật Hóa học:</strong> Hợp chất triterpenoid Asiaticoside và Madecassoside trong Rau má đã được chứng minh kích thích tổng hợp collagen type I và ức chế viêm pha cấp trong các thử nghiệm da liễu.
+          </div>
+        </div>
+
+        <div class="myth-card">
+          <span class="myth-verdict verdict-science">✅ CHÍNH XÁC KHOA HỌC</span>
+          <div class="myth-claim">"Gừng nướng thơm và giảm đầy bụng hơn gừng sống."</div>
+          <div class="myth-explanation">
+            <strong>Sự thật Hóa học:</strong> Quá trình nướng nhiệt làm biến đổi một phần Gingerol thành Shogaol và zingerone có khả năng kích thích co bóp nhu động dạ dày và tăng tiết enzyme tiêu hóa mạnh hơn.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 13: CHEMISTRY QUIZ (10 QUESTIONS)
+       ========================================================================= -->
+  <section class="quiz-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Kiểm tra Kiến thức</div>
+        <h2 class="section-title">HERBIA Phytochemistry Quiz</h2>
+        <p class="section-desc">Thử thách hiểu biết về nhóm chức, chuyển hóa thứ cấp thực vật và hóa học dược liệu Việt Nam.</p>
+      </div>
+
+      <div class="quiz-container" id="quizBox">
+        <div class="quiz-header-bar">
+          <span style="font-family: var(--font-mono); font-weight: 700; color: var(--emerald);" id="quizProgress">Câu hỏi 1 / 10</span>
+          <span class="badge badge-science" id="quizLevelBadge">Cấp độ: Explorer</span>
+        </div>
+
+        <div class="quiz-question-box">
+          <h3 id="quizQuestionText">Hệ liên hợp electron pi (Conjugated double bonds) trong phân tử Curcumin gây ra hiện tượng gì?</h3>
+          <div class="quiz-options" id="quizOptionsList">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <div class="quiz-feedback" id="quizFeedback">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
+          <button class="btn-primary" id="quizNextBtn" style="display: none;" onclick="nextQuizQuestion()">Câu tiếp theo →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 14: "BUILD YOUR OWN MOLECULE STORY"
+       ========================================================================= -->
+  <section class="story-builder-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-subtitle">Trình Tạo Nội dung Tương tác</div>
+        <h2 class="section-title">Tự xây dựng Câu chuyện Phân tử</h2>
+        <p class="section-desc">Tự do phối hợp Loài cây + Hợp chất + Nhóm chức để hệ thống tự động tổng hợp đoạn văn khoa học hoàn chỉnh.</p>
+      </div>
+
+      <div class="story-builder-box">
+        <div class="builder-step-grid">
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 6px;">1. Chọn Cây Dược liệu:</label>
+            <select class="builder-select" id="storyPlantSelect" onchange="generateCustomStory()">
+              <option value="Nghệ">Nghệ (Curcuma longa)</option>
+              <option value="Gừng">Gừng (Zingiber officinale)</option>
+              <option value="Trà xanh">Trà xanh (Camellia sinensis)</option>
+              <option value="Quế">Quế (Cinnamomum cassia)</option>
+              <option value="Tía tô">Tía tô (Perilla frutescens)</option>
+              <option value="Rau má">Rau má (Centella asiatica)</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 6px;">2. Hoạt chất chính:</label>
+            <select class="builder-select" id="storyCompSelect" onchange="generateCustomStory()">
+              <option value="Curcumin">Curcumin</option>
+              <option value="6-Gingerol">[6]-Gingerol</option>
+              <option value="EGCG">EGCG</option>
+              <option value="Cinnamaldehyde">Cinnamaldehyde</option>
+              <option value="Axit Rosmarinic">Axit Rosmarinic</option>
+              <option value="Asiaticoside">Asiaticoside</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 6px;">3. Nhóm chức trọng tâm:</label>
+            <select class="builder-select" id="storyGroupSelect" onchange="generateCustomStory()">
+              <option value="Phenolic -OH">Nhóm Phenolic -OH</option>
+              <option value="Aldehyde -CHO">Nhóm Aldehyde (-CHO)</option>
+              <option value="Ketone -C=O">Nhóm Ketone (-C=O)</option>
+              <option value="Hệ nối đôi liên hợp">Hệ nối đôi liên hợp</option>
+              <option value="Triterpenoid glycoside">Khung Triterpenoid glycoside</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 6px;">4. Hướng Ứng dụng:</label>
+            <select class="builder-select" id="storyAppSelect" onchange="generateCustomStory()">
+              <option value="dọn dẹp gốc tự do (chống oxy hóa)">Dọn dẹp gốc tự do / Chống oxy hóa</option>
+              <option value="kháng khuẩn và bảo quản sinh học">Kháng khuẩn & Bảo quản sinh học</option>
+              <option value="công nghệ nano dẫn thuốc hướng đích">Công nghệ Nano dẫn thuốc</option>
+              <option value="chăm sóc da liễu và làm lành tổn thương">Dược mỹ phẩm tái tạo da</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="builder-result-card">
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--emerald); margin-bottom: 8px;">// KẾT QUẢ TỔNG HỢP NỘI DUNG TỰ ĐỘNG:</div>
+          <p class="builder-output-text" id="builderOutputStory">
+            "Bạn đã chọn cây Nghệ. Hoạt chất trung tâm là Curcumin, được đặc trưng bởi Nhóm Phenolic -OH. Cấu trúc hóa học độc đáo này quyết định khả năng chuyển giao proton/electron linh hoạt, mở ra tiềm năng lớn trong dọn dẹp gốc tự do (chống oxy hóa)."
+          </p>
+          <div style="margin-top: 16px; display: flex; justify-content: flex-end;">
+            <button class="btn-secondary" style="padding: 6px 14px; font-size: 0.8rem;" onclick="copyGeneratedStory()">Sao chép tóm tắt 📋</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 15: PERSONAL STORY — QUANG HẢI
+       ========================================================================= -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-avatar-card">
+          <div class="avatar-icon-ring">👨‍🔬</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 4px;">QUANG HẢI</h3>
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--cyan); margin-bottom: 16px;">Student Researcher & Developer</div>
+          <p style="font-size: 0.85rem; color: #9BB3C7; line-height: 1.5;">
+            Dự án STEM cá nhân được xây dựng với niềm đam mê kết nối Thực vật học Bản địa Việt Nam và Hóa học Hữu cơ hiện đại qua giao diện số.
+          </p>
+        </div>
+
+        <div>
+          <span class="badge badge-plant">Về Dự án HERBIA</span>
+          <h2 style="font-size: 2.2rem; margin: 12px 0 16px 0;">Tại sao tôi xây dựng HERBIA?</h2>
+          <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.7;">
+            "Tôi bắt đầu với một câu hỏi tưởng như rất đơn giản khi phụ mẹ nấu ăn: <em>Tại sao củ nghệ lại vàng rực và dính chặt vào tay, trong khi gừng thì cay nồng ấm áp còn lá tía tô lại có mùi thơm dịu lành?</em>"
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7;">
+            Khi tìm kiếm tài liệu, tôi nhận thấy các website hiện nay thường chia làm 2 thái cực: hoặc là các trang kinh doanh dược liệu truyền thống thiếu giải thích cơ chế hóa học, hoặc là các bài báo học thuật quá khô khan đối với học sinh. <strong>HERBIA</strong> ra đời để trở thành cây cầu trực quan sinh động nhất — nơi bất kỳ ai cũng có thể 'nhìn thấy' vẻ đẹp của hóa học ngay trong từng chiếc lá Việt Nam.
+          </p>
+
+          <div class="about-skills-tags">
+            <span class="skill-tag">🌿 Botany</span>
+            <span class="skill-tag">⚗️ Organic Chemistry</span>
+            <span class="skill-tag">💻 Data Visualization</span>
+            <span class="skill-tag">🌐 Front-end Engineering</span>
+            <span class="skill-tag">🔬 Science Communication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 16: FULLSCREEN STORY MODAL (INTERACTIVE CHAPTER DETAIL)
+       ========================================================================= -->
+  <div class="story-modal" id="storyModal">
+    <div class="modal-nav-bar">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span class="badge badge-plant" id="modalPlantBadge">CHAPTER 01</span>
+        <h4 style="font-size: 1.1rem;" id="modalNavPlantName">Turmeric / Củ Nghệ</h4>
+      </div>
+      <button class="modal-close-btn" onclick="closeStoryModal()" title="Đóng">✕</button>
+    </div>
+
+    <div class="story-container" id="storyModalBody">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SECTION 17: FOOTER & SCIENTIFIC SAFETY DISCLAIMER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="disclaimer-card">
+        <h5>⚠️ TUYÊN BỐ AN TOÀN KHOA HỌC & MIỄN TRỪ TRÁCH NHIỆM (SCIENTIFIC DISCLAIMER)</h5>
+        <p>
+          HERBIA là một dự án nghiên cứu giáo dục STEM cá nhân của học sinh nhằm truyền thông khoa học và trực quan hóa cấu trúc hóa thực vật. Mọi nội dung trên website không cấu thành chỉ dẫn y khoa, phác đồ điều trị hay khuyến nghị thay thế thuốc chữa bệnh. Việc sử dụng bất kỳ dược liệu nào cần có sự tham vấn chuyên môn từ bác sĩ và dược sĩ được cấp phép.
+        </p>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="color: #FFFFFF;">
+            <div class="brand-logo-badge">🌿</div>
+            <span>HERBIA</span>
+          </div>
+          <p>
+            When Vietnamese Plants Meet Chemistry.<br />
+            Một hành trình khám phá từ thực vật bản địa đến thế giới phân tử.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Điều hướng</h4>
+          <ul class="footer-links-list">
+            <li><a href="#hero">Khởi đầu</a></li>
+            <li><a href="#story">Hành trình 8 bước</a></li>
+            <li><a href="#landscape">Địa lý dược liệu</a></li>
+            <li><a href="#plants">12 Loài cây</a></li>
+            <li><a href="#lab">Phòng thí nghiệm</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Cơ sở Dữ liệu</h4>
+          <ul class="footer-links-list">
+            <li><a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank">NCBI PubChem</a></li>
+            <li><a href="https://www.who.int/" target="_blank">WHO Monographs</a></li>
+            <li><a href="https://dượcđiển.vn" target="_blank">Dược điển Việt Nam V</a></li>
+            <li><a href="https://chembl.gitbook.io/" target="_blank">ChEMBL Database</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Thông tin Tác giả</h4>
+          <p style="font-size: 0.85rem; color: #9BB3C7;">
+            Tác giả: <strong>Quang Hải</strong><br />
+            Dự án: Personal STEM Project<br />
+            Năm thực hiện: 2024 - 2026<br />
+            Cấp phép: Open Educational Resource (CC BY-NC 4.0)
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 HERBIA — When Vietnamese Plants Meet Chemistry. Thiết kế cho mục đích Giáo dục Khoa học.</div>
+        <div>Made with passion for Vietnamese Biodiversity & Phytochemistry.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       JAVASCRIPT: COMPREHENSIVE DATA & INTERACTIVE ENGINES
+       ========================================================================= -->
+  <script>
+    /* ==========================================================================
+       DATA STORE: 12 VIETNAMESE MEDICINAL PLANTS & MOLECULES
+       ========================================================================== */
+    const PLANTS_DATA = [
+      {
+        id: "turmeric",
+        chapter: "CHAPTER 01",
+        nameVi: "Nghệ Vàng",
+        nameEn: "Turmeric",
+        latin: "Curcuma longa L.",
+        family: "Zingiberaceae (Họ Gừng)",
+        region: "Khắp cả nước (Trọng điểm: Nghệ An, Hưng Yên)",
+        partUsed: "Thân rễ (Củ nghệ)",
+        chemClass: "Polyphenol",
+        mainCompound: "Curcumin",
+        formula: "C₂₁H₂₀O₆",
+        molWeight: "368.38 g/mol",
+        logP: "3.2",
+        pubchemCid: "969516",
+        colorDesc: "Vàng cam rực rỡ do hệ nối đôi liên hợp dài",
+        traditionalUse: "Liền sẹo, bổ huyết, hỗ trợ tiêu hóa, phụ nữ sau sinh.",
+        scientificInsight: "Hệ diferuloylmethane có khả năng dọn gốc tự do, ức chế enzyme gây viêm COX-2 và NF-κB trong các mô hình tế bào.",
+        functionalGroups: ["Phenolic -OH", "Methoxy -OCH₃", "Diketone / Enol", "Extended Conjugated Alkene"],
+        whyQuestion: "Tại sao nghệ lại có màu vàng và khó giặt sạch khỏi vải?",
+        whyAnswer: "Cấu trúc curcuminoid có hệ liên hợp pi rộng hấp thụ ánh sáng xanh (425nm) phản xạ màu vàng, kết hợp tính kỵ nước cao bám chặt vào sợi vải xenluloza.",
+        scenes: [
+          { title: "THE ROOT — CỦ NGHỆ TRONG GIAN BẾP", text: "Bạn đang cầm trên tay một nhánh nghệ tươi từ đất mẹ Việt Nam. Từ ngàn năm qua, củ nghệ hiện diện trong bữa cơm gia đình và các bài thuốc dân gian." },
+          { title: "THE COLOR — VÌ SAO NGHỆ CÓ MÀU VÀNG?", text: "Sắc vàng cam rực rỡ không phải ngẫu nhiên. Nó đến từ nhóm hợp chất curcuminoid chiếm khoảng 3-5% khối lượng củ khô." },
+          { title: "THE MOLECULE — PHÂN TỬ CURCUMIN", text: "Curcumin (Diferuloylmethane) là phân tử đối xứng gồm hai vòng thơm phenol nối với nhau qua chuỗi 7-carbon chứa nhóm beta-diketone." },
+          { title: "THE STRUCTURE — LIÊN KẾT HÓA HỌC", text: "Ở trạng thái dung dịch, phân tử tồn tại cân bằng hỗ biến Keto-Enol, cho phép nó dễ dàng trao đổi proton và tạo phức chelate với các ion kim loại." },
+          { title: "THE PROPERTY — ĐẶC TÍNH PHẢN ỨNG", text: "Các nhóm phenolic -OH sẵn sàng nhượng nguyên tử hydro (H•) cho các gốc tự do ROS nguy hiểm, biến chúng thành dạng bền vững không độc." },
+          { title: "THE APPLICATION — CÔNG NGHỆ DƯỢC PHẨM", text: "Do độ tan kém trong nước, các nhà khoa học Việt Nam đã ứng dụng công nghệ Nano Curcumin và Phytosome để tăng khả năng hấp thu gấp 40 lần." }
+        ]
+      },
+      {
+        id: "ginger",
+        chapter: "CHAPTER 02",
+        nameVi: "Gừng Tươi",
+        nameEn: "Ginger",
+        latin: "Zingiber officinale Roscoe",
+        family: "Zingiberaceae (Họ Gừng)",
+        region: "Vùng núi và đồng bằng trung du",
+        partUsed: "Thân rễ",
+        chemClass: "Polyphenol",
+        mainCompound: "6-Gingerol",
+        formula: "C₁₇H₂₆O₄",
+        molWeight: "294.39 g/mol",
+        logP: "2.7",
+        pubchemCid: "442793",
+        colorDesc: "Chất lỏng màu vàng nhạt có vị cay nóng",
+        traditionalUse: "Trừ hàn, ấm bụng, giải cảm, chống nôn ói.",
+        scientificInsight: "Kích hoạt chọn lọc kênh ion thụ thể TRPV1 trên các tế bào thần kinh cảm giác nhiệt.",
+        functionalGroups: ["Phenolic -OH", "Methoxy -OCH₃", "Beta-hydroxy Ketone", "Aliphatic Chain"],
+        whyQuestion: "Tại sao gừng làm ta cảm thấy ấm nóng tức thì?",
+        whyAnswer: "6-Gingerol gắn vào thụ thể TRPV1 (thụ thể cảm nhận nhiệt độ >43°C), truyền tín hiệu giả về não bộ rằng mô đang ấm lên, kích thích giãn mạch ngoại vi.",
+        scenes: [
+          { title: "THE ROOT — VỊ CAY BẢN ĐỊA", text: "Củ gừng là gia vị không thể thiếu trong ẩm thực và bài thuốc trị cảm lạnh mùa đông của người Việt." },
+          { title: "THE MOLECULE — [6]-GINGEROL", text: "Hợp chất chính tạo nên vị cay dịu của gừng tươi là [6]-gingerol với một đuôi alkyl 6-carbon gắn với nhân guaiacol." },
+          { title: "THE TRANSFORMATION — KHI SẤY KHÔ", text: "Khi đun nóng, gingerol bị dehydrat hóa tách nước tạo thành shogaol có vị cay gắt gấp đôi, giải thích vì sao gừng khô cay hơn gừng tươi." }
+        ]
+      },
+      {
+        id: "greentea",
+        chapter: "CHAPTER 03",
+        nameVi: "Trà Xanh",
+        nameEn: "Green Tea",
+        latin: "Camellia sinensis (L.) Kuntze",
+        family: "Theaceae (Họ Chè)",
+        region: "Thái Nguyên, Mộc Châu, Lâm Đồng",
+        partUsed: "Búp và lá non",
+        chemClass: "Polyphenol",
+        mainCompound: "Epigallocatechin Gallate (EGCG)",
+        formula: "C₂₂H₁₈O₁₁",
+        molWeight: "458.37 g/mol",
+        logP: "1.5",
+        pubchemCid: "65064",
+        colorDesc: "Tinh thể trắng ngà tạo vị chát thanh",
+        traditionalUse: "Thanh nhiệt, giải độc, tỉnh táo, làm sáng mắt.",
+        scientificInsight: "Khả năng quét sạch gốc oxy hóa tự do mạnh gấp nhiều lần Vitamin C và E nhờ 8 nhóm -OH phenol.",
+        functionalGroups: ["8x Phenolic -OH", "Ester Linkage", "Chroman Ring (Flavan-3-ol)"],
+        whyQuestion: "Tại sao nước trà để lâu ngoài không khí bị ngả màu nâu sẫm?",
+        whyAnswer: "Các catechin trong trà bị enzyme polyphenol oxidase và oxy không khí oxy hóa trùng hợp thành thearubigins và theaflavins màu nâu đỏ.",
+        scenes: [
+          { title: "THE LEAF — BÚP CHÈ XANH XỨ THÁI", text: "Những đồi chè Tân Cương bạt ngàn hấp thụ sương sớm để tích lũy lượng catechin dồi dào nhất." },
+          { title: "THE MOLECULE — SIÊU PHÂN TỬ EGCG", text: "EGCG là este của epigallocatechin và axit gallic. Sở hữu tới 8 nhóm phenolic -OH, đây là cỗ máy bẫy electron tự do siêu đẳng." }
+        ]
+      },
+      {
+        id: "cinnamon",
+        chapter: "CHAPTER 04",
+        nameVi: "Quế Thanh / Quế Yên Bái",
+        nameEn: "Cinnamon",
+        latin: "Cinnamomum cassia Presl",
+        family: "Lauraceae (Họ Long não)",
+        region: "Văn Yên (Yên Bái), Trà My (Quảng Nam)",
+        partUsed: "Vỏ thân, cành",
+        chemClass: "Terpenoid",
+        mainCompound: "Cinnamaldehyde",
+        formula: "C₉H₈O",
+        molWeight: "132.16 g/mol",
+        logP: "1.9",
+        pubchemCid: "637511",
+        colorDesc: "Chất lỏng màu vàng hương thơm nồng nàn",
+        traditionalUse: "Bổ hỏa trợ dương, ấm kinh thông mạch, hồi dương cứu nghịch.",
+        scientificInsight: "Ức chế mạnh mẽ sự hình thành màng sinh học (biofilm) của vi khuẩn gram âm và gram dương.",
+        functionalGroups: ["Aldehyde -CHO", "Phenyl Ring", "Alpha,Beta-Unsaturated Alkene"],
+        whyQuestion: "Vì sao quế có khả năng kháng khuẩn và giữ thức ăn lâu thiu?",
+        whyAnswer: "Nhóm aldehyde không no của Cinnamaldehyde phản ứng ái điện tử với các nhóm amin trên protein màng vi khuẩn, phá vỡ cấu trúc màng tế bào của chúng.",
+        scenes: [
+          { title: "THE BARK — VỎ QUẾ RỪNG ĐẠI NGÀN", text: "Vỏ quế được bóc tách cẩn thận từ những cây quế cổ thụ trên sườn núi đá vôi Hoàng Liên Sơn." },
+          { title: "THE MOLECULE — CINNAMALDEHYDE", text: "Phân tử nhỏ gọn nhưng mang nhóm aldehyde liên hợp đặc biệt, dễ bay hơi tạo nên hương thơm lan tỏa ngút ngàn." }
+        ]
+      },
+      {
+        id: "perilla",
+        chapter: "CHAPTER 05",
+        nameVi: "Tía Tô",
+        nameEn: "Perilla",
+        latin: "Perilla frutescens (L.) Britt.",
+        family: "Lamiaceae (Họ Hoa môi)",
+        region: "Trồng khắp mọi miền Việt Nam",
+        partUsed: "Lá, cành, hạt",
+        chemClass: "Polyphenol",
+        mainCompound: "Axit Rosmarinic",
+        formula: "C₁₈H₁₆O₈",
+        molWeight: "360.31 g/mol",
+        logP: "1.6",
+        pubchemCid: "5281792",
+        colorDesc: "Bột tinh thể màu vàng nhạt",
+        traditionalUse: "Giải cảm hàn, tiêu đờm, an thai, giải độc cua cá.",
+        scientificInsight: "Kháng dị ứng, ức chế giải phóng histamine từ dưỡng bào (mast cells).",
+        functionalGroups: ["Carboxylic -COOH", "Ester Linkage", "Catechol Moieties (4x -OH)"],
+        whyQuestion: "Tại sao ăn hải sản sống người Việt luôn ăn kèm lá tía tô?",
+        whyAnswer: "Tinh dầu tía tô chứa Perillaldehyde và Axit Rosmarinic có tính sát khuẩn mạnh và trung hòa các amin độc do vi sinh vật thủy sản tiết ra.",
+        scenes: [
+          { title: "THE PURPLE LEAF — CHIẾC LÁ HAI MÀU", text: "Mặt trên xanh thẫm, mặt dưới tím tía chứa đựng cả anthocyanin lẫn các polyphenol bảo vệ." }
+        ]
+      },
+      {
+        id: "lemongrass",
+        chapter: "CHAPTER 06",
+        nameVi: "Sả Chanh",
+        nameEn: "Lemongrass",
+        latin: "Cymbopogon citratus (DC.) Stapf",
+        family: "Poaceae (Họ Lúa)",
+        region: "Khắp cả nước",
+        partUsed: "Toàn cây, thân rễ",
+        chemClass: "Terpenoid",
+        mainCompound: "Citral (Geranial & Neral)",
+        formula: "C₁₀H₁₆O",
+        molWeight: "152.23 g/mol",
+        logP: "2.8",
+        pubchemCid: "638011",
+        colorDesc: "Chất lỏng trong suốt hương thơm chanh sảng khoái",
+        traditionalUse: "Xông cảm, giải độc rượu, tiêu thực, đuổi côn trùng.",
+        scientificInsight: "Ức chế acetylcholinesterase và phá vỡ tính thấm màng tế bào nấm mốc.",
+        functionalGroups: ["Aldehyde -CHO", "Di-unsaturated Alkene", "Isoprene Skeleton"],
+        whyQuestion: "Vì sao sả đuổi được muỗi nhưng lại thơm với người?",
+        whyAnswer: "Citral kích thích thụ thể khứu giác dễ chịu ở người nhưng lại gây tê liệt và quá tải thụ thể định vị carbon dioxide ở muỗi.",
+        scenes: [
+          { title: "THE BLADE — BỤI SẢ BỜ AO", text: "Lá sả tích tụ tinh dầu trong các túi tiết vi mô nằm dọc theo gân lá dài." }
+        ]
+      },
+      {
+        id: "centella",
+        chapter: "CHAPTER 07",
+        nameVi: "Rau Má",
+        nameEn: "Centella / Gotu Kola",
+        latin: "Centella asiatica (L.) Urb.",
+        family: "Apiaceae (Họ Hoa tán)",
+        region: "Vùng đất ẩm ướt khắp Việt Nam",
+        partUsed: "Toàn cây trên mặt đất",
+        chemClass: "Saponin",
+        mainCompound: "Asiaticoside",
+        formula: "C₄₈H₇₈O₁₉",
+        molWeight: "959.12 g/mol",
+        logP: "0.8",
+        pubchemCid: "108062",
+        colorDesc: "Hợp chất glycoside tan tốt trong nước",
+        traditionalUse: "Thanh nhiệt giải độc, mát gan, làm lành vết thương, mụn nhọt.",
+        scientificInsight: "Kích thích nguyên bào sợi tăng tổng hợp Collagen type I và thúc đẩy quá trình biểu mô hóa da.",
+        functionalGroups: ["Triterpene Aglycone", "Trisaccharide Chain", "Carboxylic Ester"],
+        whyQuestion: "Tại sao rau má lại làm mờ vết sẹo thâm nhanh chóng?",
+        whyAnswer: "Asiaticoside điều hòa nồng độ TGF-beta 1 và TGF-beta 2, ngăn chặn sự tăng sinh quá mức gây sẹo lồi và kích thích tạo tế bào da mới.",
+        scenes: [
+          { title: "THE GREEN LEAF — CHIẾC LÁ HÌNH ĐỒNG TIỀN", text: "Loài cây bò sát mặt đất ẩm ướt tích lũy những đại phân tử triterpene phục hồi tế bào kỳ diệu." }
+        ]
+      },
+      {
+        id: "polyscias",
+        chapter: "CHAPTER 08",
+        nameVi: "Đinh Lăng",
+        nameEn: "Polyscias / Vietnamese Ginseng",
+        latin: "Polyscias fruticosa (L.) Harms",
+        family: "Araliaceae (Họ Nhân sâm)",
+        region: "Được trồng làm cảnh và làm thuốc khắp Việt Nam",
+        partUsed: "Rễ, củ, lá",
+        chemClass: "Saponin",
+        mainCompound: "Oleanolic acid saponins",
+        formula: "C₃₀H₄₈O₃ (Aglycone)",
+        molWeight: "456.70 g/mol",
+        logP: "5.5",
+        pubchemCid: "10494",
+        colorDesc: "Saponin tạo bọt bền khi lắc với nước",
+        traditionalUse: "Bổ khí lực, bồi bổ cơ thể mệt mỏi, thông tia sữa, an thần.",
+        scientificInsight: "Tăng cường sức chịu đựng của cơ thể trước stress nhiệt và tăng dẫn truyền tín hiệu thần kinh.",
+        functionalGroups: ["Pentacyclic Triterpene", "Carboxylic -COOH", "Hydroxyl -OH"],
+        whyQuestion: "Tại sao dịch chiết rễ đinh lăng lại sủi bọt như xà phòng khi lắc?",
+        whyAnswer: "Cấu trúc Saponin gồm một đầu ưa nước (mạch đường) và một đầu kỵ nước (khung steroid/triterpene), đóng vai trò chất hoạt động bề mặt tự nhiên làm giảm sức căng bề mặt của nước.",
+        scenes: [
+          { title: "THE ROOT — 'NHÂN SÂM CỦA NGƯỜI NGHÈO'", text: "Củ đinh lăng lâu năm chứa hàm lượng saponin phong phú tương tự như các loài trong họ Araliaceae." }
+        ]
+      },
+      {
+        id: "artichoke",
+        chapter: "CHAPTER 09",
+        nameVi: "Atisô Đà Lạt",
+        nameEn: "Artichoke",
+        latin: "Cynara scolymus L.",
+        family: "Asteraceae (Họ Cúc)",
+        region: "Đà Lạt (Lâm Đồng), Sa Pa (Lào Cai)",
+        partUsed: "Lá, hoa, rễ",
+        chemClass: "Polyphenol",
+        mainCompound: "Cynarin (1,3-Dicaffeoylquinic acid)",
+        formula: "C₂₅H₂₄O₁₂",
+        molWeight: "516.45 g/mol",
+        logP: "0.9",
+        pubchemCid: "5281769",
+        colorDesc: "Hợp chất đắng tan trong nước",
+        traditionalUse: "Mát gan, lợi mật, hạ cholesterol, thông tiểu.",
+        scientificInsight: "Kích thích tế bào gan sản sinh dịch mật và ức chế sinh tổng hợp cholesterol nội sinh qua HMG-CoA reductase.",
+        functionalGroups: ["Quinic Acid Core", "2x Caffeic Acid Esters", "Catechol Rings"],
+        whyQuestion: "Tại sao sau khi uống trà Atisô, uống nước lọc lại thấy ngọt ngào?",
+        whyAnswer: "Cynarin tạm thời ức chế thụ thể vị ngọt T1R2/T1R3 trên lưỡi. Khi uống nước lọc, cynarin bị rửa trôi khiến thụ thể phục hồi và gửi tín hiệu ngọt bù trừ lên não.",
+        scenes: [
+          { title: "THE FLOWER — ĐÓA HOA XANH CAO NGUYÊN", text: "Đà Lạt với khí hậu quanh năm 18°C là môi trường lý tưởng để Atisô tổng hợp Cynarin tối ưu." }
+        ]
+      },
+      {
+        id: "honeysuckle",
+        chapter: "CHAPTER 10",
+        nameVi: "Kim Ngân Hoa",
+        nameEn: "Japanese Honeysuckle",
+        latin: "Lonicera japonica Thunb.",
+        family: "Caprifoliaceae (Họ Kim ngân)",
+        region: "Vùng núi phía Bắc (Lạng Sơn, Cao Bằng)",
+        partUsed: "Nụ hoa sắp nở",
+        chemClass: "Polyphenol",
+        mainCompound: "Chlorogenic Acid",
+        formula: "C₁₆H₁₈O₉",
+        molWeight: "354.31 g/mol",
+        logP: "-0.4",
+        pubchemCid: "1794427",
+        colorDesc: "Tinh thể trắng tan tốt trong nước ấm",
+        traditionalUse: "Thanh nhiệt, giải độc, trị mụn nhọt, viêm họng, cảm sốt.",
+        scientificInsight: "Kháng virus cúm và ức chế giải phóng các cytokine gây viêm như IL-6 và TNF-alpha.",
+        functionalGroups: ["Ester Linkage", "Quinic Acid Residue", "Caffeic Moieties"],
+        whyQuestion: "Vì sao hoa kim ngân đổi từ màu trắng sang màu vàng?",
+        whyAnswer: "Sau khi thụ phấn, hoa chuyển màu vàng do sự tích lũy carotenoid và thoái hóa nhẹ mô cánh hoa để báo hiệu cho côn trùng thụ phấn chuyển sang nụ hoa khác.",
+        scenes: [
+          { title: "THE BLOSSOM — HOA ĐỔI MÀU BẢN ĐỊA", text: "Nụ hoa trắng và vàng mọc xen kẽ mang lại tên gọi Kim (vàng) Ngân (bạc)." }
+        ]
+      },
+      {
+        id: "fallopia",
+        chapter: "CHAPTER 11",
+        nameVi: "Hà Thủ Ô Đỏ",
+        nameEn: "Red Polygonum",
+        latin: "Fallopia multiflora (Thunb.) Haraldson",
+        family: "Polygonaceae (Họ Rau răm)",
+        region: "Hà Giang, Lào Cai, Lai Châu",
+        partUsed: "Rễ củ (đã chế biến)",
+        chemClass: "Polyphenol",
+        mainCompound: "THSG (Tetrahydroxystilbene Glucoside)",
+        formula: "C₂₀H₂₂O₉",
+        molWeight: "406.38 g/mol",
+        logP: "0.2",
+        pubchemCid: "107775",
+        colorDesc: "Glucoside stilbene màu đỏ nâu đặc trưng",
+        traditionalUse: "Bổ can thận, dưỡng huyết, đen râu tóc, kéo dài tuổi thọ.",
+        scientificInsight: "Bảo vệ màng tế bào khỏi peroxy hóa lipid và kích hoạt biểu hiện gen trường thọ SIRT1.",
+        functionalGroups: ["Stilbene Backbone (Resveratrol-like)", "Glucose Unit", "Polyhydroxy Phenols"],
+        whyQuestion: "Tại sao củ hà thủ ô bắt buộc phải 'cửu chưng cửu sái' với nước đỗ đen?",
+        whyAnswer: "Chế biến nhiệt 9 lần giúp thủy phân các hợp chất Anthraquinone tự do (gây tiêu chảy và độc gan) thành dạng liên kết, đồng thời tăng hàm lượng THSG có lợi.",
+        scenes: [
+          { title: "THE ROOTS — BÀI THUỐC BẤT LÃO", text: "Củ hà thủ ô đỏ nằm sâu trong lòng đất núi đá vôi ôm ấp hợp chất stilbene quý giá." }
+        ]
+      },
+      {
+        id: "solanum",
+        chapter: "CHAPTER 12",
+        nameVi: "Cà Gai Leo",
+        nameEn: "Solanum Procumbens",
+        latin: "Solanum procumbens Lour.",
+        family: "Solanaceae (Họ Cà)",
+        region: "Miền Trung (Quảng Trị, Quảng Bình, Nghệ An)",
+        partUsed: "Toàn cây trên mặt đất và rễ",
+        chemClass: "Alkaloid",
+        mainCompound: "Glycoalkaloids (Solamargine / Solasonine)",
+        formula: "C₄₅H₇₃NO₁₅",
+        molWeight: "868.06 g/mol",
+        logP: "1.1",
+        pubchemCid: "442978",
+        colorDesc: "Steroidal alkaloid glycoside",
+        traditionalUse: "Giải độc gan, trị viêm gan B, giải rượu, phong thấp.",
+        scientificInsight: "Ức chế sự nhân lên của virus viêm gan và giảm sự lắng đọng collagen gây xơ hóa tế bào gan.",
+        functionalGroups: ["Steroidal Aglycone (Solasodine)", "Nitrogen-containing Ring", "Branched Tri-saccharide"],
+        whyQuestion: "Vì sao Cà gai leo được coi là dược liệu khắc tinh của xơ gan?",
+        whyAnswer: "Glycoalkaloid trong cà gai leo có khả năng ức chế sự kích hoạt của tế bào sao gan (hepatic stellate cells) - thủ phạm chính sản sinh collagen gây sẹo xơ gan.",
+        scenes: [
+          { title: "THE THORNY VINE — DÂY LEO ĐẦY GAI", text: "Cây cà gai leo mọc hoang dã nơi cằn cỗi miền Trung lại là kho tàng bảo vệ lá gan người Việt." }
+        ]
+      }
+    ];
+
+    /* Quiz Questions Data (10 Scientific Questions) */
+    const QUIZ_QUESTIONS = [
+      {
+        question: "Hệ liên hợp electron pi (Extended conjugated system) trong Curcumin quyết định đặc tính vật lý nào?",
+        options: [
+          "Làm cho nghệ có khả năng bay hơi cực nhanh",
+          "Hấp thụ ánh sáng xanh và tạo màu vàng cam rực rỡ",
+          "Làm cho curcumin tan hoàn toàn trong nước lạnh",
+          "Tạo ra vị cay gắt trên đầu lưỡi"
+        ],
+        correct: 1,
+        explanation: "Chính xác! Chuỗi liên kết đôi-đơn xen kẽ kéo dài giữa 2 vòng thơm làm giảm khoảng cách HOMO-LUMO, hấp thụ bức xạ bước sóng 420-430 nm (xanh lam) và phản xạ dải màu vàng."
+      },
+      {
+        question: "Khi phơi sấy hoặc đun nóng gừng tươi, [6]-Gingerol chuyển hóa thành chất nào có vị cay mạnh hơn?",
+        options: ["Curcumin", "EGCG", "[6]-Shogaol", "Cinnamaldehyde"],
+        correct: 2,
+        explanation: "Chính xác! Phản ứng tách nước (dehydration) biến nhóm beta-hydroxy của gingerol thành liên kết đôi alpha,beta-không no tạo ra Shogaol."
+      },
+      {
+        question: "EGCG trong trà xanh có tới 8 nhóm chức nào giúp nó trở thành chất bẫy gốc tự do siêu đẳng?",
+        options: ["Nhóm Aldehyde (-CHO)", "Nhóm Phenolic Hydroxyl (-OH)", "Nhóm Carboxylic (-COOH)", "Nhóm Amino (-NH₂)"],
+        correct: 1,
+        explanation: "Chính xác! 8 nhóm -OH phenolic sẵn sàng nhường nguyên tử H• cho các gốc tự do ROS, chuyển chúng thành dạng bền vững."
+      },
+      {
+        question: "Hợp chất chính tạo nên mùi thơm đặc trưng của Vỏ quế Việt Nam là gì?",
+        options: ["Cinnamaldehyde", "Menthol", "Citral", "Asiaticoside"],
+        correct: 0,
+        explanation: "Đúng! Cinnamaldehyde chiếm tới 75-90% hàm lượng tinh dầu trong vỏ quế."
+      },
+      {
+        question: "Đặc tính nào khiến Saponin trong rễ Đinh lăng có khả năng tạo bọt bền khi lắc với nước?",
+        options: [
+          "Nó là một chất khí hòa tan",
+          "Nó có cấu trúc lưỡng ái (vừa có đầu ưa nước vừa có đầu kỵ nước)",
+          "Nó có tính axit cực mạnh",
+          "Nó làm đông tụ toàn bộ phân tử nước"
+        ],
+        correct: 1,
+        explanation: "Chính xác! Cấu trúc gồm phần aglycone kỵ nước gắn với mạch đường ưa nước giúp saponin hoạt động như chất hoạt động bề mặt tự nhiên."
+      },
+      {
+        question: "Để tăng khả năng hấp thu của Curcumin qua đường tiêu hóa, người ta thường phối hợp với hợp chất nào trong hạt tiêu đen?",
+        options: ["Piperine", "Capsaicin", "Caffeine", "Allicin"],
+        correct: 0,
+        explanation: "Đúng! Piperine ức chế enzyme glucuronidation tại gan và ruột, tăng sinh khả dụng của curcumin lên đến 2000%."
+      },
+      {
+        question: "Dung môi nào sau đây chiết tách Curcumin từ củ nghệ cho hiệu suất cao nhất?",
+        options: ["Nước cất tinh khiết", "Ethanol 70% - 96%", "Nước muối sinh lý", "Nước chanh pha loãng"],
+        correct: 1,
+        explanation: "Chính xác! Do Curcumin là phân tử kỵ nước (LogP ≈ 3.2), cồn hữu cơ như Ethanol hòa tan tốt hơn rất nhiều so với nước cất."
+      },
+      {
+        question: "Hợp chất Asiaticoside được chiết xuất từ loài cây dược liệu quen thuộc nào của Việt Nam?",
+        options: ["Cà gai leo", "Rau má", "Tía tô", "Kim ngân hoa"],
+        correct: 1,
+        explanation: "Chính xác! Asiaticoside là triterpenoid glycoside quý trong cây Rau má (Centella asiatica)."
+      },
+      {
+        question: "Quá trình 'cửu chưng cửu sái' trong chế biến củ Hà thủ ô đỏ nhằm mục đích hóa học chính là gì?",
+        options: [
+          "Làm mất hoàn toàn màu đỏ của củ",
+          "Giảm độc tính của Anthraquinone tự do và bảo tồn THSG",
+          "Chuyển toàn bộ chất đạm thành chất béo",
+          "Tạo thêm vị cay nóng cho củ"
+        ],
+        correct: 1,
+        explanation: "Chính xác! Nhiệt ẩm và đỗ đen chuyển hóa các anthraquinone gây tiêu chảy thành dạng kết hợp an toàn và tăng hiệu quả bổ huyết."
+      },
+      {
+        question: "Hợp chất Cynarin trong cây Atisô mang lại công dụng sinh học nổi tiếng nào?",
+        options: [
+          "Kích thích tiết dịch mật và hỗ trợ chức năng gan",
+          "Làm tăng huyết áp tức thì",
+          "Gây buồn ngủ sâu",
+          "Tẩy trắng men răng"
+        ],
+        correct: 0,
+        explanation: "Tuyệt vời! Cynarin cùng các axit dicaffeoylquinic kích thích sản sinh dịch mật và hỗ trợ chuyển hóa lipid tại gan."
+      }
+    ];
+
+    /* Regions Data for Map */
+    const REGIONS_DATA = {
+      northwest: {
+        title: "Tây Bắc & Dãy Hoàng Liên Sơn",
+        tag: "Vùng núi cao ôn đới",
+        alt: "Độ cao: 1.000m - 2.500m",
+        climate: "Khí hậu á nhiệt đới và ôn đới núi cao, mùa đông lạnh có sương muối.",
+        story: "Hệ sinh thái núi cao Tây Bắc là cái nôi của các loài dược liệu ưa lạnh quý giá như Atisô, Hà thủ ô đỏ, Đương quy và Tam thất. Điều kiện bức xạ cực tím mạnh kích thích thực vật tổng hợp nồng độ cao các hợp chất polyphenol bảo vệ tế bào.",
+        plants: ["Atisô (Cynarin)", "Hà thủ ô (THSG)", "Quế Yên Bái (Cinnamaldehyde)"]
+      },
+      northeast: {
+        title: "Đông Bắc & Vùng Núi Đá Vôi",
+        tag: "Vùng rừng núi đá vôi",
+        alt: "Độ cao: 300m - 1.200m",
+        climate: "Nhiệt đới gió mùa có mùa đông lạnh rõ rệt, đất phong hóa từ đá vôi giàu khoáng Canxi.",
+        story: "Các vách đá vôi Lạng Sơn, Cao Bằng nuôi dưỡng Kim Ngân Hoa và Hồi Lạng Sơn với hàm lượng tinh dầu anethole và flavonoid kháng khuẩn đặc hiệu.",
+        plants: ["Kim ngân hoa (Chlorogenic acid)", "Hồi (trans-Anethole)", "Hà thủ ô"]
+      },
+      redriver: {
+        title: "Đồng Bằng Sông Hồng",
+        tag: "Đồng bằng phù sa trù phú",
+        alt: "Độ cao: 5m - 50m",
+        climate: "Nhiệt đới ẩm gió mùa, phù sa màu mỡ từ sông Hồng và sông Thái Bình.",
+        story: "Vùng đất truyền thống của các cây thuốc gia vị và rau cỏ như Tía tô, Gừng, Nghệ, Sả chanh và Bạc hà. Nguồn nước dồi dào tạo điều kiện sinh khối thực vật phát triển nhanh chóng.",
+        plants: ["Tía tô (Rosmarinic acid)", "Nghệ vàng (Curcumin)", "Gừng tươi (Gingerol)"]
+      },
+      central: {
+        title: "Bắc Trung Bộ & Duyên Hải",
+        tag: "Vùng đất cát nắng gió",
+        alt: "Ven biển và đồi núi thấp",
+        climate: "Thời tiết khắc nghiệt, nắng nóng gay gắt, gió Lào khô nóng và bão lũ.",
+        story: "Môi trường sống khắc nghiệt buộc thực vật như Cà gai leo, Trầm hương và Quế Trà My phải tổng hợp các hợp chất tự vệ như glycoalkaloid và sesquiterpene đậm đặc để sinh tồn.",
+        plants: ["Cà gai leo (Solamargine)", "Quế Trà My", "Tràm gió (Cineol)"]
+      },
+      highlands: {
+        title: "Tây Nguyên & Đất Đỏ Bazan",
+        tag: "Cao nguyên đất đỏ bazan",
+        alt: "Độ cao: 500m - 1.500m",
+        climate: "Khí hậu 2 mùa mưa - khô rõ rệt, tầng đất bazan sâu màu mỡ giàu sắt và nhôm.",
+        story: "Cái nôi của các loại thảo mộc họ Nhân sâm như Đinh lăng, Sâm Ngọc Linh, Trà xanh Bảo Lộc. Hàm lượng saponin và polyphenol tại đây có hoạt tính sinh học hàng đầu cả nước.",
+        plants: ["Đinh lăng (Saponin)", "Trà xanh (EGCG)", "Sâm Ngọc Linh (MR2)"]
+      },
+      mekong: {
+        title: "Đồng Bằng Sông Cửu Long",
+        tag: "Vùng châu thổ ngập nước",
+        alt: "Độ cao: 0.5m - 2m",
+        climate: "Khí hậu nhiệt đới xích đạo nóng ẩm quanh năm, mạng lưới kênh rạch chằng chịt.",
+        story: "Đặc trưng bởi hệ thực vật nhiệt đới ưa nước và chịu mặn nhẹ như Rau má, Tràm tràm, Dừa cạn, Nhàu. Rau má đồng bằng phát triển phiến lá mọng nước giàu asiaticoside làm lành da.",
+        plants: ["Rau má (Asiaticoside)", "Sả chanh (Citral)", "Dừa cạn (Vinblastine)"]
+      }
+    };
+
+    /* Chemical SVG Blueprints for Molecular Lab Viewport */
+    const MOLECULE_SVGS = {
+      curcumin: `
+        <svg viewBox="0 0 540 180" width="100%" height="220" style="overflow:visible;">
+          <defs>
+            <filter id="glow-p" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          <!-- Left Phenol Ring -->
+          <polygon points="50,90 75,50 120,50 145,90 120,130 75,130" fill="none" stroke="var(--text-main)" stroke-width="2.5" />
+          <circle cx="95" cy="90" r="22" fill="none" stroke="var(--text-main)" stroke-width="1.5" stroke-dasharray="4,4" />
+          <g class="lab-fg fg-oh" id="fg-cur-oh1">
+            <line x1="50" y1="90" x2="20" y2="90" stroke="var(--molecular-purple)" stroke-width="3" />
+            <text x="2" y="94" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="14">HO</text>
+          </g>
+          <g class="lab-fg fg-och3" id="fg-cur-och3-1">
+            <line x1="75" y1="50" x2="60" y2="25" stroke="var(--cyan)" stroke-width="2.5" />
+            <text x="35" y="20" font-family="JetBrains Mono" font-weight="600" fill="var(--cyan)" font-size="12">H₃CO</text>
+          </g>
+
+          <!-- Alkene linker chain -->
+          <g class="lab-fg fg-conjugated" id="fg-cur-conj">
+            <line x1="145" y1="90" x2="185" y2="90" stroke="var(--text-main)" stroke-width="2.5" />
+            <line x1="185" y1="90" x2="215" y2="55" stroke="var(--text-main)" stroke-width="2.5" />
+            <line x1="187" y1="96" x2="212" y2="65" stroke="var(--text-main)" stroke-width="1.8" />
+            
+            <line x1="215" y1="55" x2="255" y2="55" stroke="var(--text-main)" stroke-width="2.5" />
+            <line x1="255" y1="55" x2="270" y2="90" stroke="var(--text-main)" stroke-width="2.5" />
+            <line x1="270" y1="90" x2="285" y2="55" stroke="var(--text-main)" stroke-width="2.5" />
+            <line x1="285" y1="55" x2="325" y2="55" stroke="var(--text-main)" stroke-width="2.5" />
+            <line x1="325" y1="55" x2="355" y2="90" stroke="var(--text-main)" stroke-width="2.5" />
+            <line x1="327" y1="65" x2="353" y2="96" stroke="var(--text-main)" stroke-width="1.8" />
+            <line x1="355" y1="90" x2="395" y2="90" stroke="var(--text-main)" stroke-width="2.5" />
+          </g>
+
+          <!-- Carbonyl groups -->
+          <g class="lab-fg fg-carbonyl" id="fg-cur-co1">
+            <line x1="255" y1="55" x2="255" y2="25" stroke="var(--amber-accent)" stroke-width="3" />
+            <line x1="260" y1="55" x2="260" y2="25" stroke="var(--amber-accent)" stroke-width="1.5" />
+            <text x="252" y="18" font-family="JetBrains Mono" font-weight="700" fill="var(--amber-accent)" font-size="13">O</text>
+          </g>
+          <g class="lab-fg fg-carbonyl" id="fg-cur-co2">
+            <line x1="285" y1="55" x2="285" y2="25" stroke="var(--amber-accent)" stroke-width="3" />
+            <line x1="290" y1="55" x2="290" y2="25" stroke="var(--amber-accent)" stroke-width="1.5" />
+            <text x="282" y="18" font-family="JetBrains Mono" font-weight="700" fill="var(--amber-accent)" font-size="13">O</text>
+          </g>
+
+          <!-- Right Phenol Ring -->
+          <polygon points="395,90 420,50 465,50 490,90 465,130 420,130" fill="none" stroke="var(--text-main)" stroke-width="2.5" />
+          <circle cx="440" cy="90" r="22" fill="none" stroke="var(--text-main)" stroke-width="1.5" stroke-dasharray="4,4" />
+          <g class="lab-fg fg-oh" id="fg-cur-oh2">
+            <line x1="490" y1="90" x2="520" y2="90" stroke="var(--molecular-purple)" stroke-width="3" />
+            <text x="524" y="94" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="14">OH</text>
+          </g>
+          <g class="lab-fg fg-och3" id="fg-cur-och3-2">
+            <line x1="465" y1="50" x2="480" y2="25" stroke="var(--cyan)" stroke-width="2.5" />
+            <text x="485" y="20" font-family="JetBrains Mono" font-weight="600" fill="var(--cyan)" font-size="12">OCH₃</text>
+          </g>
+        </svg>
+      `,
+      gingerol: `
+        <svg viewBox="0 0 520 180" width="100%" height="220" style="overflow:visible;">
+          <!-- Phenol Ring -->
+          <polygon points="60,90 85,50 130,50 155,90 130,130 85,130" fill="none" stroke="var(--text-main)" stroke-width="2.5" />
+          <circle cx="107" cy="90" r="22" fill="none" stroke="var(--text-main)" stroke-width="1.5" stroke-dasharray="4,4" />
+          <g class="lab-fg fg-oh">
+            <line x1="60" y1="90" x2="30" y2="90" stroke="var(--molecular-purple)" stroke-width="3" />
+            <text x="10" y="94" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="14">HO</text>
+          </g>
+          <g class="lab-fg fg-och3">
+            <line x1="85" y1="50" x2="70" y2="25" stroke="var(--cyan)" stroke-width="2.5" />
+            <text x="45" y="20" font-family="JetBrains Mono" font-weight="600" fill="var(--cyan)" font-size="12">H₃CO</text>
+          </g>
+          <!-- Alkyl chain with carbonyl and beta-OH -->
+          <line x1="155" y1="90" x2="195" y2="90" stroke="var(--text-main)" stroke-width="2.5" />
+          <line x1="195" y1="90" x2="230" y2="55" stroke="var(--text-main)" stroke-width="2.5" />
+          
+          <g class="lab-fg fg-carbonyl">
+            <line x1="230" y1="55" x2="230" y2="25" stroke="var(--amber-accent)" stroke-width="3" />
+            <line x1="235" y1="55" x2="235" y2="25" stroke="var(--amber-accent)" stroke-width="1.5" />
+            <text x="227" y="18" font-family="JetBrains Mono" font-weight="700" fill="var(--amber-accent)" font-size="13">O</text>
+          </g>
+
+          <line x1="230" y1="55" x2="270" y2="90" stroke="var(--text-main)" stroke-width="2.5" />
+          <line x1="270" y1="90" x2="310" y2="55" stroke="var(--text-main)" stroke-width="2.5" />
+
+          <g class="lab-fg fg-oh">
+            <line x1="310" y1="55" x2="310" y2="25" stroke="var(--molecular-purple)" stroke-width="3" />
+            <text x="303" y="18" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="13">OH</text>
+          </g>
+
+          <!-- Hexyl tail -->
+          <line x1="310" y1="55" x2="350" y2="90" stroke="var(--text-main)" stroke-width="2.5" />
+          <line x1="350" y1="90" x2="390" y2="55" stroke="var(--text-main)" stroke-width="2.5" />
+          <line x1="390" y1="55" x2="430" y2="90" stroke="var(--text-main)" stroke-width="2.5" />
+          <line x1="430" y1="90" x2="470" y2="55" stroke="var(--text-main)" stroke-width="2.5" />
+          <line x1="470" y1="55" x2="505" y2="90" stroke="var(--text-main)" stroke-width="2.5" />
+        </svg>
+      `,
+      egcg: `
+        <svg viewBox="0 0 520 200" width="100%" height="220" style="overflow:visible;">
+          <!-- Chroman A-ring -->
+          <polygon points="60,80 85,45 125,45 150,80 125,115 85,115" fill="none" stroke="var(--text-main)" stroke-width="2.5" />
+          <circle cx="105" cy="80" r="18" fill="none" stroke="var(--text-main)" stroke-width="1.5" stroke-dasharray="3,3" />
+          <g class="lab-fg fg-oh">
+            <line x1="60" y1="80" x2="35" y2="80" stroke="var(--molecular-purple)" stroke-width="3" /><text x="12" y="84" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="13">HO</text>
+            <line x1="85" y1="115" x2="70" y2="140" stroke="var(--molecular-purple)" stroke-width="3" /><text x="50" y="155" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="13">OH</text>
+          </g>
+
+          <!-- C-ring with oxygen bridge -->
+          <path d="M125,45 L170,45 L190,80 L170,115 L125,115" fill="none" stroke="var(--text-main)" stroke-width="2.5" />
+          <text x="165" y="42" font-family="JetBrains Mono" font-weight="700" fill="var(--cyan)" font-size="13">O</text>
+
+          <!-- B-ring (Trihydroxy phenyl) -->
+          <line x1="190" y1="80" x2="230" y2="80" stroke="var(--text-main)" stroke-width="2.5" />
+          <polygon points="230,80 250,50 290,50 310,80 290,110 250,110" fill="none" stroke="var(--text-main)" stroke-width="2.2" />
+          <g class="lab-fg fg-oh">
+            <line x1="250" y1="50" x2="240" y2="25" stroke="var(--molecular-purple)" stroke-width="2.5" /><text x="225" y="20" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="11">OH</text>
+            <line x1="290" y1="50" x2="305" y2="25" stroke="var(--molecular-purple)" stroke-width="2.5" /><text x="310" y="20" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="11">OH</text>
+            <line x1="310" y1="80" x2="335" y2="80" stroke="var(--molecular-purple)" stroke-width="2.5" /><text x="340" y="84" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="11">OH</text>
+          </g>
+
+          <!-- Gallate Ester linkage on C-3 -->
+          <g class="lab-fg fg-carbonyl">
+            <line x1="170" y1="115" x2="170" y2="145" stroke="var(--amber-accent)" stroke-width="2.5" />
+            <text x="165" y="160" font-family="JetBrains Mono" font-weight="700" fill="var(--amber-accent)" font-size="12">O-C=O</text>
+          </g>
+          <line x1="190" y1="165" x2="230" y2="165" stroke="var(--text-main)" stroke-width="2" />
+          <polygon points="230,165 250,140 285,140 305,165 285,190 250,190" fill="none" stroke="var(--text-main)" stroke-width="2" />
+          <g class="lab-fg fg-oh">
+            <text x="312" y="169" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="10">3x OH</text>
+          </g>
+        </svg>
+      `,
+      cinnamaldehyde: `
+        <svg viewBox="0 0 460 160" width="100%" height="200" style="overflow:visible;">
+          <!-- Benzene Ring -->
+          <polygon points="60,80 85,40 135,40 160,80 135,120 85,120" fill="none" stroke="var(--text-main)" stroke-width="2.8" />
+          <circle cx="110" cy="80" r="24" fill="none" stroke="var(--text-main)" stroke-width="1.8" stroke-dasharray="4,4" />
+          
+          <!-- Conjugated Alkene & Aldehyde -->
+          <g class="lab-fg fg-conjugated">
+            <line x1="160" y1="80" x2="220" y2="80" stroke="var(--text-main)" stroke-width="2.8" />
+            <line x1="220" y1="80" x2="265" y2="40" stroke="var(--text-main)" stroke-width="2.8" />
+            <line x1="222" y1="88" x2="262" y2="50" stroke="var(--text-main)" stroke-width="2" />
+            
+            <line x1="265" y1="40" x2="320" y2="80" stroke="var(--text-main)" stroke-width="2.8" />
+          </g>
+
+          <g class="lab-fg fg-carbonyl">
+            <line x1="320" y1="80" x2="365" y2="45" stroke="var(--amber-accent)" stroke-width="3.5" />
+            <line x1="316" y1="74" x2="360" y2="40" stroke="var(--amber-accent)" stroke-width="1.8" />
+            <text x="372" y="44" font-family="JetBrains Mono" font-weight="700" fill="var(--amber-accent)" font-size="16">=O</text>
+          </g>
+          <line x1="320" y1="80" x2="345" y2="115" stroke="var(--text-main)" stroke-width="2.2" />
+          <text x="350" y="125" font-family="JetBrains Mono" font-weight="600" fill="var(--text-muted)" font-size="14">-H</text>
+        </svg>
+      `,
+      rosmarinic: `
+        <svg viewBox="0 0 500 180" width="100%" height="200" style="overflow:visible;">
+          <!-- Caffeic acid moiety -->
+          <polygon points="50,80 75,45 115,45 140,80 115,115 75,115" fill="none" stroke="var(--text-main)" stroke-width="2.2" />
+          <g class="lab-fg fg-oh">
+            <line x1="50" y1="80" x2="25" y2="80" stroke="var(--molecular-purple)" stroke-width="2.5" /><text x="2" y="84" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="12">HO</text>
+            <line x1="75" y1="115" x2="60" y2="135" stroke="var(--molecular-purple)" stroke-width="2.5" /><text x="40" y="150" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="12">HO</text>
+          </g>
+          <line x1="140" y1="80" x2="180" y2="80" stroke="var(--text-main)" stroke-width="2.2" />
+          <line x1="180" y1="80" x2="210" y2="45" stroke="var(--text-main)" stroke-width="2.2" />
+          <line x1="182" y1="86" x2="208" y2="53" stroke="var(--text-main)" stroke-width="1.6" />
+          
+          <!-- Ester bridge -->
+          <g class="lab-fg fg-carbonyl">
+            <line x1="210" y1="45" x2="210" y2="15" stroke="var(--amber-accent)" stroke-width="2.5" /><text x="204" y="10" font-family="JetBrains Mono" font-weight="700" fill="var(--amber-accent)" font-size="12">O</text>
+          </g>
+          <line x1="210" y1="45" x2="245" y2="70" stroke="var(--cyan)" stroke-width="2.2" />
+          <text x="248" y="75" font-family="JetBrains Mono" font-weight="700" fill="var(--cyan)" font-size="12">O</text>
+          
+          <!-- Danshensu moiety with -COOH -->
+          <line x1="265" y1="70" x2="300" y2="45" stroke="var(--text-main)" stroke-width="2.2" />
+          <g class="lab-fg fg-cooh">
+            <text x="290" y="25" font-family="JetBrains Mono" font-weight="700" fill="var(--emerald)" font-size="12">COOH</text>
+          </g>
+          <line x1="300" y1="45" x2="340" y2="80" stroke="var(--text-main)" stroke-width="2.2" />
+          <polygon points="340,80 365,45 405,45 430,80 405,115 365,115" fill="none" stroke="var(--text-main)" stroke-width="2.2" />
+          <g class="lab-fg fg-oh">
+            <line x1="430" y1="80" x2="455" y2="80" stroke="var(--molecular-purple)" stroke-width="2.5" /><text x="460" y="84" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="12">OH</text>
+            <line x1="405" y1="115" x2="420" y2="135" stroke="var(--molecular-purple)" stroke-width="2.5" /><text x="425" y="150" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="12">OH</text>
+          </g>
+        </svg>
+      `,
+      cynarin: `
+        <svg viewBox="0 0 520 180" width="100%" height="200" style="overflow:visible;">
+          <!-- Quinic acid cyclohexane core -->
+          <polygon points="210,80 235,45 275,45 300,80 275,115 235,115" fill="none" stroke="var(--text-main)" stroke-width="2.5" />
+          <g class="lab-fg fg-cooh">
+            <text x="285" y="35" font-family="JetBrains Mono" font-weight="700" fill="var(--emerald)" font-size="12">-COOH</text>
+          </g>
+          <!-- Left Caffeoyl ester -->
+          <line x1="210" y1="80" x2="175" y2="80" stroke="var(--cyan)" stroke-width="2" />
+          <text x="135" y="84" font-family="JetBrains Mono" font-weight="700" fill="var(--cyan)" font-size="11">O-Caffeoyl</text>
+          <!-- Right Caffeoyl ester -->
+          <line x1="300" y1="80" x2="335" y2="80" stroke="var(--cyan)" stroke-width="2" />
+          <text x="340" y="84" font-family="JetBrains Mono" font-weight="700" fill="var(--cyan)" font-size="11">O-Caffeoyl</text>
+          <g class="lab-fg fg-oh">
+            <text x="240" y="140" font-family="JetBrains Mono" font-weight="700" fill="var(--molecular-purple)" font-size="11">2x Ring -OH</text>
+          </g>
+        </svg>
+      `
+    };
+
+    /* ==========================================================================
+       APP STATE & CONTROLLERS
+       ========================================================================== */
+    let currentTheme = 'light';
+    let currentQuizIndex = 0;
+    let quizScore = 0;
+    let selectedGamePlant = null;
+    let selectedGameMolecule = null;
+    let matchedPairsCount = 0;
+    let currentExtractionSolvent = 'water';
+
+    /* ==========================================================================
+       INITIALIZATION
+       ========================================================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dismiss loader
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        if (loader) loader.classList.add('loaded');
+      }, 1000);
+
+      // Render Plants
+      renderPlants(PLANTS_DATA);
+
+      // Render Lab List
+      renderLabSidebar();
+      openLabCompound('curcumin');
+
+      // Initialize Compare Table
+      updateCompareTable();
+
+      // Initialize Quiz
+      renderQuizQuestion();
+
+      // Setup Parallax & Hero Canvas Animation
+      initHeroCanvas();
+
+      // Setup Scroll Progress & Chapters
+      window.addEventListener('scroll', handleScrollEvents);
+
+      // Setup Custom Cursor
+      initCustomCursor();
+
+      // Setup Theme toggle
+      const themeBtn = document.getElementById('themeToggle');
+      if (themeBtn) {
+        themeBtn.addEventListener('click', toggleTheme);
+      }
+    });
+
+    /* ==========================================================================
+       CUSTOM CURSOR ENGINE
+       ========================================================================== */
+    function initCustomCursor() {
+      const cursor = document.getElementById('cursor');
+      const dot = document.getElementById('cursor-dot');
+      if (!cursor || !dot) return;
+
+      let mouseX = 0, mouseY = 0;
+      let cursorX = 0, cursorY = 0;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+      });
+
+      function animateCursor() {
+        cursorX += (mouseX - cursorX) * 0.15;
+        cursorY += (mouseY - cursorY) * 0.15;
+        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      // Hover feedback on interactive elements
+      const interactives = document.querySelectorAll('button, a, .plant-card, .chapter-node, .question-item, .match-card');
+      interactives.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
+      });
+    }
+
+    /* ==========================================================================
+       THEME CONTROLLER
+       ========================================================================== */
+    function toggleTheme() {
+      currentTheme = (currentTheme === 'light') ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      const sunIcon = document.getElementById('themeIconSun');
+      if (currentTheme === 'dark') {
+        sunIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+      } else {
+        sunIcon.innerHTML = `<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>`;
+      }
+    }
+
+    /* ==========================================================================
+       SCROLL & CHAPTER INDICATOR
+       ========================================================================== */
+    function handleScrollEvents() {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollY / docHeight) * 100;
+      
+      const bar = document.getElementById('progressBar');
+      if (bar) bar.style.width = `${progress}%`;
+
+      // Update Chapter indicators based on section offset
+      const sections = ['hero', 'story', 'question', 'landscape', 'plants', 'lab', 'experiments', 'about'];
+      const nodes = document.querySelectorAll('.chapter-node');
+      
+      sections.forEach((secId, idx) => {
+        const sec = document.getElementById(secId);
+        if (sec) {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= 200 && rect.bottom >= 200) {
+            nodes.forEach(n => n.classList.remove('active'));
+            if (nodes[idx]) nodes[idx].classList.add('active');
+          }
+        }
+      });
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ==========================================================================
+       HERO CANVAS: FLOATING MOLECULAR NETWORK
+       ========================================================================== */
+    function initHeroCanvas() {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width = canvas.width = canvas.parentElement.offsetWidth;
+      let height = canvas.height = canvas.parentElement.offsetHeight;
+
+      const particles = [];
+      const particleCount = 28;
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.8,
+          vy: (Math.random() - 0.5) * 0.8,
+          radius: Math.random() * 3.5 + 2,
+          color: i % 3 === 0 ? '#19B5D8' : (i % 3 === 1 ? '#0E8F6E' : '#6657C7')
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 90) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(25, 181, 216, ${1 - dist / 90 * 0.85})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Draw particles
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+      }
+      draw();
+
+      window.addEventListener('resize', () => {
+        if (canvas.parentElement) {
+          width = canvas.width = canvas.parentElement.offsetWidth;
+          height = canvas.height = canvas.parentElement.offsetHeight;
+        }
+      });
+    }
+
+    /* ==========================================================================
+       SECTION 03: QUESTION PREVIEWS
+       ========================================================================= */
+    const QUESTION_PREVIEWS = [
+      {
+        badge: "Hóa học màu sắc",
+        herb: "Nghệ vàng (Curcuma longa)",
+        title: "Hệ liên hợp nối đôi kéo dài (Extended Conjugated System)",
+        desc: "Phân tử <strong>Curcumin</strong> sở hữu chuỗi liên kết đôi - đơn xen kẽ dài nối giữa hai vòng phenol. Hệ liên hợp electron pi này làm giảm khoảng cách năng lượng HOMO-LUMO, khiến phân tử hấp thụ mạnh ánh sáng vùng xanh lam (420–430 nm) và phản xạ dải màu vàng cam tới mắt người xem.",
+        formula: "Curcumin: C₂₁H₂₀O₆ | M = 368.38 g/mol",
+        compoundId: "curcumin"
+      },
+      {
+        badge: "Thụ thể nhiệt học",
+        herb: "Gừng tươi (Zingiber officinale)",
+        title: "Kích hoạt chọn lọc thụ thể nhiệt TRPV1",
+        desc: "Hợp chất <strong>6-Gingerol</strong> gắn chính xác vào thụ thể vanilloid TRPV1 trên đầu mút dây thần kinh cảm giác lưỡi (loại thụ thể thường phản ứng khi nhiệt độ >43°C). Não bộ nhận tín hiệu 'bỏng nhiệt' giả lập, kích thích cơ chế toát mồ hôi và tăng tuần hoàn máu.",
+        formula: "6-Gingerol: C₁₇H₂₆O₄ | M = 294.39 g/mol",
+        compoundId: "gingerol"
+      },
+      {
+        badge: "Khứu giác & Bay hơi",
+        herb: "Quế Yên Bái (Cinnamomum cassia)",
+        title: "Aldehyde thơm có áp suất hơi bão hòa cao",
+        desc: "<strong>Cinnamaldehyde</strong> mang nhóm chức aldehyde (-CHO) liên hợp với vòng benzene. Cấu trúc nhỏ gọn cho phép nó bốc hơi nhanh ở nhiệt độ phòng và kích thích cực nhạy các thụ thể OR51E1 trong khoang mũi người với nồng độ chỉ vài phần tỷ (ppb).",
+        formula: "Cinnamaldehyde: C₉H₈O | M = 132.16 g/mol",
+        compoundId: "cinnamaldehyde"
+      },
+      {
+        badge: "Liên kết Hydro & Protein",
+        herb: "Trà xanh Thái Nguyên (Camellia sinensis)",
+        title: "Kết tủa Protein nước bọt bởi Polyphenol",
+        desc: "Với 8 nhóm -OH phenolic phân bố đều, phân tử <strong>EGCG</strong> dễ dàng tạo liên kết hydro chéo với các chuỗi protein mucin giàu proline trong khoang miệng. Sự kết tủa tức thì này làm mất đi lớp chất nhầy bôi trơn niêm mạc, tạo cảm giác 'se miệng' hay vị chát thanh.",
+        formula: "EGCG: C₂₂H₁₈O₁₁ | M = 458.37 g/mol",
+        compoundId: "egcg"
+      },
+      {
+        badge: "Kháng Histamine",
+        herb: "Tía tô (Perilla frutescens)",
+        title: "Ester Caffeic & Terpenoid kháng dị ứng",
+        desc: "Sự kết hợp giữa <strong>Axit Rosmarinic</strong> và tinh dầu <strong>Perillaldehyde</strong> làm dịu nhanh phản ứng viêm nhờ ức chế các enzyme Lipoxygenase và Cyclooxygenase, đồng thời ngăn dưỡng bào giải phóng hạt chứa histamine gây mẩn ngứa.",
+        formula: "Axit Rosmarinic: C₁₈H₁₆O₈ | M = 360.31 g/mol",
+        compoundId: "rosmarinic"
+      }
+    ];
+
+    function showQuestionDetail(index) {
+      const qItems = document.querySelectorAll('.question-item');
+      qItems.forEach((el, idx) => {
+        el.classList.toggle('active', idx === index);
+      });
+
+      const data = QUESTION_PREVIEWS[index];
+      document.getElementById('qBadge').textContent = data.badge;
+      document.getElementById('qHerb').textContent = data.herb;
+      document.getElementById('qTitle').textContent = data.title;
+      document.getElementById('qDesc').innerHTML = data.desc;
+      document.getElementById('qFormula').textContent = data.formula;
+      
+      const btn = document.querySelector('#questionPreviewPanel button');
+      if (btn) {
+        btn.setAttribute('onclick', `openLabCompound('${data.compoundId}')`);
+      }
+    }
+
+    /* ==========================================================================
+       SECTION 05: MAP REGION CONTROLLER
+       ========================================================================= */
+    function selectRegion(regKey) {
+      document.querySelectorAll('.vn-region-path').forEach(p => p.classList.remove('active'));
+      const activePath = document.getElementById(`path-${regKey}`);
+      if (activePath) activePath.classList.add('active');
+
+      const data = REGIONS_DATA[regKey];
+      if (!data) return;
+
+      document.getElementById('regTag').textContent = data.tag;
+      document.getElementById('regAlt').textContent = data.alt;
+      document.getElementById('regTitle').textContent = data.title;
+      document.getElementById('regClimate').textContent = data.climate;
+      document.getElementById('regStory').textContent = data.story;
+
+      const plantsBox = document.getElementById('regPlants');
+      plantsBox.innerHTML = '';
+      data.plants.forEach(p => {
+        const span = document.createElement('span');
+        span.className = 'region-plant-tag';
+        span.textContent = p;
+        plantsBox.appendChild(span);
+      });
+    }
+
+    /* ==========================================================================
+       SECTION 06: PLANTS GRID & FILTER
+       ========================================================================= */
+    function renderPlants(plants) {
+      const grid = document.getElementById('plantsGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      plants.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'plant-card';
+        card.setAttribute('onclick', `openStoryModal('${p.id}')`);
+
+        card.innerHTML = `
+          <div>
+            <div class="plant-card-chapter">${p.chapter}</div>
+            <h3 class="plant-card-name">${p.nameVi}</h3>
+            <div class="plant-card-latin">${p.latin}</div>
+            <div class="plant-card-pill-list">
+              <span class="plant-compound-pill">⚛️ ${p.mainCompound}</span>
+              <span class="badge badge-science" style="font-size:0.68rem; padding: 2px 6px;">${p.chemClass}</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px;">
+              ${p.traditionalUse}
+            </p>
+          </div>
+          <div class="plant-card-footer">
+            <span>Khám phá phân tử →</span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-light);">${p.formula}</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterPlants(category) {
+      document.querySelectorAll('.filter-tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      if (category === 'all') {
+        renderPlants(PLANTS_DATA);
+      } else {
+        const filtered = PLANTS_DATA.filter(p => p.chemClass.includes(category));
+        renderPlants(filtered);
+      }
+    }
+
+    function handlePlantSearch() {
+      const query = document.getElementById('plantSearchInput').value.toLowerCase().trim();
+      const filtered = PLANTS_DATA.filter(p => 
+        p.nameVi.toLowerCase().includes(query) ||
+        p.nameEn.toLowerCase().includes(query) ||
+        p.mainCompound.toLowerCase().includes(query) ||
+        p.latin.toLowerCase().includes(query)
+      );
+      renderPlants(filtered);
+    }
+
+    /* ==========================================================================
+       SECTION 07: CHEMICAL STRUCTURE LAB CONTROLLER
+       ========================================================================= */
+    function renderLabSidebar() {
+      const list = document.getElementById('labCompoundList');
+      if (!list) return;
+      list.innerHTML = '';
+
+      PLANTS_DATA.slice(0, 6).forEach(p => {
+        const btn = document.createElement('button');
+        btn.className = `lab-compound-btn ${p.id === 'curcumin' ? 'active' : ''}`;
+        btn.id = `lab-btn-${p.id}`;
+        btn.onclick = () => openLabCompound(p.id);
+
+        btn.innerHTML = `
+          <span class="c-name">${p.mainCompound}</span>
+          <span class="c-origin">${p.nameVi} (${p.latin})</span>
+        `;
+        list.appendChild(btn);
+      });
+    }
+
+    function openLabCompound(id) {
+      document.querySelectorAll('.lab-compound-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById(`lab-btn-${id}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const data = PLANTS_DATA.find(p => p.id === id) || PLANTS_DATA[0];
+
+      document.getElementById('labCompClass').textContent = `${data.chemClass} • ${data.family}`;
+      document.getElementById('labCompName').textContent = data.mainCompound;
+      document.getElementById('labCompOrigin').textContent = `Nguồn tự nhiên: ${data.nameVi} (${data.latin})`;
+      document.getElementById('labPubchemLink').href = `https://pubchem.ncbi.nlm.nih.gov/compound/${data.pubchemCid}`;
+      document.getElementById('labPubchemLink').innerHTML = `<span>PubChem CID: ${data.pubchemCid}</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+
+      document.getElementById('labFormula').textContent = data.formula;
+      document.getElementById('labMass').textContent = data.molWeight;
+      document.getElementById('labLogP').textContent = `LogP: ${data.logP}`;
+
+      // Insert SVG blueprint
+      const stage = document.getElementById('labSvgStage');
+      stage.innerHTML = MOLECULE_SVGS[id] || MOLECULE_SVGS['curcumin'];
+
+      // Controls for highlighting functional groups
+      const controlsBar = document.getElementById('labGroupControls');
+      controlsBar.innerHTML = '';
+      data.functionalGroups.forEach(fg => {
+        const pill = document.createElement('button');
+        pill.className = 'lab-toggle-pill';
+        pill.textContent = `⚡ Highlight ${fg}`;
+        pill.onclick = () => highlightFunctionalGroup(fg, pill);
+        controlsBar.appendChild(pill);
+      });
+    }
+
+    function highlightFunctionalGroup(groupName, btn) {
+      btn.classList.toggle('active');
+      const svg = document.querySelector('#labSvgStage svg');
+      if (!svg) return;
+
+      const fgs = svg.querySelectorAll('.lab-fg');
+      fgs.forEach(el => {
+        el.style.transition = 'all 0.3s ease';
+        if (btn.classList.contains('active')) {
+          el.style.filter = 'drop-shadow(0 0 8px var(--molecular-purple))';
+          el.style.transform = 'scale(1.05)';
+        } else {
+          el.style.filter = 'none';
+          el.style.transform = 'scale(1)';
+        }
+      });
+    }
+
+    /* ==========================================================================
+       SECTION 08: "WHY?" ACCORDION TOGGLE
+       ========================================================================= */
+    function toggleWhy(btn) {
+      const card = btn.closest('.why-card');
+      card.classList.toggle('open');
+      btn.textContent = card.classList.contains('open') ? 'THU GỌN ▲' : 'TẠI SAO? ▼';
+    }
+
+    /* ==========================================================================
+       SECTION 09: MOLECULE BATTLE / COMPARE ENGINE
+       ========================================================================= */
+    function updateCompareTable() {
+      const idA = document.getElementById('compareSelectA').value;
+      const idB = document.getElementById('compareSelectB').value;
+
+      const pA = PLANTS_DATA.find(p => p.id === idA) || PLANTS_DATA[0];
+      const pB = PLANTS_DATA.find(p => p.id === idB) || PLANTS_DATA[1];
+
+      document.getElementById('compTitleA').textContent = pA.mainCompound;
+      document.getElementById('compTitleB').textContent = pB.mainCompound;
+
+      const tbody = document.getElementById('compareTableBody');
+      tbody.innerHTML = `
+        <tr>
+          <th>Nguồn gốc thực vật</th>
+          <td>${pA.nameVi} (<em>${pA.latin}</em>)</td>
+          <td>${pB.nameVi} (<em>${pB.latin}</em>)</td>
+        </tr>
+        <tr>
+          <th>Công thức phân tử</th>
+          <td><code>${pA.formula}</code></td>
+          <td><code>${pB.formula}</code></td>
+        </tr>
+        <tr>
+          <th>Khối lượng phân tử</th>
+          <td>${pA.molWeight}</td>
+          <td>${pB.molWeight}</td>
+        </tr>
+        <tr>
+          <th>Phân loại hóa học</th>
+          <td><span class="badge badge-chem">${pA.chemClass}</span></td>
+          <td><span class="badge badge-chem">${pB.chemClass}</span></td>
+        </tr>
+        <tr>
+          <th>Độ tan / Tính kỵ nước</th>
+          <td>LogP = ${pA.logP}</td>
+          <td>LogP = ${pB.logP}</td>
+        </tr>
+        <tr>
+          <th>Nhóm chức chìa khóa</th>
+          <td>${pA.functionalGroups.join(', ')}</td>
+          <td>${pB.functionalGroups.join(', ')}</td>
+        </tr>
+        <tr>
+          <th>Cơ chế sinh học chính</th>
+          <td>${pA.scientificInsight}</td>
+          <td>${pB.scientificInsight}</td>
+        </tr>
+      `;
+    }
+
+    /* ==========================================================================
+       SECTION 10: VIRTUAL EXTRACTION LAB SIMULATOR
+       ========================================================================= */
+    function setSolvent(solvent, btn) {
+      currentExtractionSolvent = solvent;
+      document.querySelectorAll('.solvent-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      runExtractionSim();
+    }
+
+    function updateTemp(val) {
+      document.getElementById('tempVal').textContent = `${val}°C`;
+      runExtractionSim();
+    }
+
+    function runExtractionSim() {
+      const herb = document.getElementById('extractHerbSelect').value;
+      const sol = currentExtractionSolvent;
+
+      let yieldPercent = 20;
+      let badgeText = "";
+      let titleText = "";
+      let explanation = "";
+      let recommendation = "";
+
+      if (herb === 'turmeric') {
+        titleText = "Chiết tách Curcuminoid từ Củ Nghệ";
+        if (sol === 'water') {
+          yieldPercent = 8;
+          badgeText = "Dung môi: Nước cất (Cực phân cực, ε=80)";
+          explanation = "Curcumin mang cấu trúc kỵ nước mạnh (LogP ≈ 3.2). Nước cất không thể hòa tan hiệu quả cấu trúc này, hiệu suất thu hồi rất thấp.";
+          recommendation = "Chuyển sang cồn 70% hoặc bổ sung chất béo để hòa tan.";
+        } else if (sol === 'eth70') {
+          yieldPercent = 85;
+          badgeText = "Dung môi: Ethanol 70% (Tối ưu)";
+          explanation = "Ethanol 70% có độ phân cực trung bình, tương hợp hoàn hảo với cả phần ưa nước lẫn khung liên hợp của Curcumin, cho hiệu suất trích ly cao nhất.";
+          recommendation = "Đây là dung môi chiết xuất vàng trong công nghiệp dược liệu.";
+        } else if (sol === 'eth96') {
+          yieldPercent = 78;
+          badgeText = "Dung môi: Ethanol 96%";
+          explanation = "Hòa tan curcumin rất tốt nhưng đồng thời kéo theo nhiều sáp và nhựa không mong muốn từ củ nghệ.";
+          recommendation = "Cần thêm bước tinh chế loại sáp.";
+        } else {
+          yieldPercent = 65;
+          badgeText = "Dung môi: Dầu thực vật (Non-polar)";
+          explanation = "Curcumin tan rất tốt trong pha dầu lipid, tạo nên màu vàng đậm đặc trong các món cari truyền thống.";
+          recommendation = "Phù hợp bào chế dạng nhũ tương lipid hoặc phytosome.";
+        }
+      } else {
+        titleText = "Chiết tách Hợp chất Thực vật";
+        yieldPercent = sol === 'eth70' ? 82 : (sol === 'water' ? 60 : 45);
+        badgeText = `Dung môi: ${sol.toUpperCase()}`;
+        explanation = "Tùy thuộc vào bản chất nhóm chức của phân tử mục tiêu, việc lựa chọn dung môi phân cực hay không phân cực sẽ quyết định hiệu suất thu hồi.";
+        recommendation = "Áp dụng định luật 'Like dissolves like' trong thực nghiệm.";
+      }
+
+      document.getElementById('simSolventBadge').textContent = badgeText;
+      document.getElementById('simHerbTitle').textContent = titleText;
+      document.getElementById('simHerbExplanation').textContent = explanation;
+      document.getElementById('simRecommendation').textContent = recommendation;
+      document.getElementById('simYieldText').textContent = `${yieldPercent}%`;
+      document.getElementById('simYieldBar').style.width = `${yieldPercent}%`;
+    }
+
+    /* ==========================================================================
+       SECTION 11: MATCH THE MOLECULE MINIGAME
+       ========================================================================= */
+    const MATCH_PAIRS = {
+      turmeric: 'curcumin',
+      ginger: 'gingerol',
+      cinnamon: 'cinnamaldehyde',
+      greentea: 'egcg',
+      perilla: 'rosmarinic'
+    };
+
+    function selectGamePlant(pId, el) {
+      if (el.classList.contains('matched')) return;
+      document.querySelectorAll('#matchPlantsCol .match-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedGamePlant = pId;
+      checkMatchGamePair();
+    }
+
+    function selectGameMolecule(mId, el) {
+      if (el.classList.contains('matched')) return;
+      document.querySelectorAll('#matchMoleculesCol .match-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedGameMolecule = mId;
+      checkMatchGamePair();
+    }
+
+    function checkMatchGamePair() {
+      if (!selectedGamePlant || !selectedGameMolecule) return;
+
+      const status = document.getElementById('gameStatusMessage');
+      if (MATCH_PAIRS[selectedGamePlant] === selectedGameMolecule) {
+        // Correct match
+        const plantEl = document.querySelector(`#matchPlantsCol [data-plant="${selectedGamePlant}"]`);
+        const molEl = document.querySelector(`#matchMoleculesCol [data-mol="${selectedGameMolecule}"]`);
+
+        plantEl.classList.remove('selected');
+        molEl.classList.remove('selected');
+        plantEl.classList.add('matched');
+        molEl.classList.add('matched');
+
+        matchedPairsCount++;
+        document.getElementById('gameScore').textContent = `${matchedPairsCount} / 5`;
+        status.innerHTML = `🎉 <strong>Chính xác!</strong> Đã thiết lập liên kết hóa thực vật thành công.`;
+        status.style.color = 'var(--emerald)';
+
+        selectedGamePlant = null;
+        selectedGameMolecule = null;
+
+        if (matchedPairsCount === 5) {
+          status.innerHTML = `🏆 <strong>HOÀN THÀNH XUẤT SẮC!</strong> Bạn đã nắm vững các liên kết phân tử cốt lõi.`;
+        }
+      } else {
+        // Wrong match
+        status.innerHTML = `❌ Chưa chính xác. Cấu trúc này thuộc về loài cây khác. Hãy thử lại!`;
+        status.style.color = '#DC2626';
+        setTimeout(() => {
+          document.querySelectorAll('.match-card.selected').forEach(c => c.classList.remove('selected'));
+          selectedGamePlant = null;
+          selectedGameMolecule = null;
+        }, 1000);
+      }
+    }
+
+    function resetMatchGame() {
+      matchedPairsCount = 0;
+      selectedGamePlant = null;
+      selectedGameMolecule = null;
+      document.getElementById('gameScore').textContent = `0 / 5`;
+      document.querySelectorAll('.match-card').forEach(c => {
+        c.classList.remove('matched', 'selected');
+      });
+      document.getElementById('gameStatusMessage').textContent = 'Chọn một cây và một phân tử để liên kết...';
+      document.getElementById('gameStatusMessage').style.color = 'var(--emerald)';
+    }
+
+    /* ==========================================================================
+       SECTION 13: CHEMISTRY QUIZ ENGINE
+       ========================================================================= */
+    function renderQuizQuestion() {
+      const q = QUIZ_QUESTIONS[currentQuizIndex];
+      document.getElementById('quizProgress').textContent = `Câu hỏi ${currentQuizIndex + 1} / ${QUIZ_QUESTIONS.length}`;
+      document.getElementById('quizQuestionText').textContent = q.question;
+
+      const optBox = document.getElementById('quizOptionsList');
+      optBox.innerHTML = '';
+      document.getElementById('quizFeedback').style.display = 'none';
+      document.getElementById('quizNextBtn').style.display = 'none';
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.innerHTML = `<span><strong>${String.fromCharCode(65 + idx)}.</strong> ${opt}</span> <span>→</span>`;
+        btn.onclick = () => submitQuizAnswer(idx, btn);
+        optBox.appendChild(btn);
+      });
+    }
+
+    function submitQuizAnswer(selectedIdx, btn) {
+      const q = QUIZ_QUESTIONS[currentQuizIndex];
+      const allBtns = document.querySelectorAll('.quiz-opt-btn');
+      allBtns.forEach(b => b.style.pointerEvents = 'none');
+
+      const fb = document.getElementById('quizFeedback');
+      fb.style.display = 'block';
+
+      if (selectedIdx === q.correct) {
+        btn.classList.add('correct');
+        quizScore++;
+        fb.innerHTML = `<strong>✅ Xuất sắc:</strong> ${q.explanation}`;
+        fb.style.background = '#D1FAE5';
+        fb.style.color = '#065F46';
+      } else {
+        btn.classList.add('wrong');
+        allBtns[q.correct].classList.add('correct');
+        fb.innerHTML = `<strong>❌ Chưa đúng:</strong> ${q.explanation}`;
+        fb.style.background = '#FEE2E2';
+        fb.style.color = '#991B1B';
+      }
+
+      // Update Badge based on score
+      const badge = document.getElementById('quizLevelBadge');
+      if (quizScore >= 8) badge.textContent = "Cấp độ: Herbal Chemist 🏅";
+      else if (quizScore >= 5) badge.textContent = "Cấp độ: Molecule Hunter 🔬";
+      else badge.textContent = "Cấp độ: Explorer 🌿";
+
+      document.getElementById('quizNextBtn').style.display = 'inline-flex';
+    }
+
+    function nextQuizQuestion() {
+      currentQuizIndex++;
+      if (currentQuizIndex < QUIZ_QUESTIONS.length) {
+        renderQuizQuestion();
+      } else {
+        // Finish Quiz
+        const box = document.getElementById('quizBox');
+        box.innerHTML = `
+          <div style="text-align: center; padding: 40px 20px;">
+            <div style="font-size: 3rem; margin-bottom: 16px;">🎓</div>
+            <h3 style="font-size: 2rem; color: var(--text-main); margin-bottom: 12px;">Hoàn thành Bài kiểm tra!</h3>
+            <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px;">
+              Bạn đạt được <strong>${quizScore} / ${QUIZ_QUESTIONS.length} điểm</strong> (${(quizScore / QUIZ_QUESTIONS.length * 100).toFixed(0)}%).
+            </p>
+            <div style="margin-bottom: 32px;">
+              <span class="badge badge-chem" style="font-size: 1rem; padding: 8px 18px;">
+                Danh hiệu: ${quizScore >= 8 ? 'Herbal Chemist Đại tài 🌟' : (quizScore >= 5 ? 'Nhà săn Phân tử Explorer 🔬' : 'Học viên Hóa thực vật Novice 🌿')}
+              </span>
+            </div>
+            <button class="btn-primary" onclick="restartQuiz()">Làm lại bài kiểm tra ↺</button>
+          </div>
+        `;
+      }
+    }
+
+    function restartQuiz() {
+      currentQuizIndex = 0;
+      quizScore = 0;
+      location.reload();
+    }
+
+    /* ==========================================================================
+       SECTION 14: BUILD YOUR OWN MOLECULE STORY
+       ========================================================================= */
+    function generateCustomStory() {
+      const plant = document.getElementById('storyPlantSelect').value;
+      const comp = document.getElementById('storyCompSelect').value;
+      const group = document.getElementById('storyGroupSelect').value;
+      const app = document.getElementById('storyAppSelect').value;
+
+      const generated = `"Bạn đã chọn cây ${plant}. Hoạt chất trung tâm là ${comp}, được đặc trưng bởi ${group}. Cấu trúc hóa học độc đáo này quyết định khả năng chuyển giao proton/electron linh hoạt và tính chất liên kết đặc hiệu, mở ra tiềm năng lớn trong ${app}."`;
+
+      document.getElementById('builderOutputStory').textContent = generated;
+    }
+
+    function copyGeneratedStory() {
+      const text = document.getElementById('builderOutputStory').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Đã sao chép đoạn tóm tắt khoa học vào bộ nhớ tạm!");
+      });
+    }
+
+    /* ==========================================================================
+       SECTION 16: FULLSCREEN INTERACTIVE STORY MODAL
+       ========================================================================= */
+    function openStoryModal(plantId) {
+      const plant = PLANTS_DATA.find(p => p.id === plantId) || PLANTS_DATA[0];
+      const modal = document.getElementById('storyModal');
+      const body = document.getElementById('storyModalBody');
+
+      document.getElementById('modalPlantBadge').textContent = plant.chapter;
+      document.getElementById('modalNavPlantName').textContent = `${plant.nameEn} / ${plant.nameVi} (${plant.latin})`;
+
+      let scenesHtml = '';
+      plant.scenes.forEach((sc, idx) => {
+        scenesHtml += `
+          <div class="story-scene-card">
+            <div class="scene-number">SCENE 0${idx + 1}</div>
+            <h3 class="scene-heading">${sc.title}</h3>
+            <p class="scene-content">${sc.text}</p>
+          </div>
+        `;
+      });
+
+      // Interactive pathway section
+      scenesHtml += `
+        <div class="story-scene-card" style="background: linear-gradient(135deg, var(--bg-card), var(--bg-tertiary));">
+          <div class="scene-number">SCIENTIFIC PATHWAY</div>
+          <h3 class="scene-heading">Chuỗi Logic Hóa Thực Vật</h3>
+          <div class="interactive-pathway">
+            <div class="pathway-step">
+              <div class="pathway-icon-box">01</div>
+              <div class="pathway-text">
+                <h4>Cấu trúc Phân tử (Structure)</h4>
+                <p>Khung liên kết: ${plant.formula} | Nhóm chức: ${plant.functionalGroups.join(', ')}</p>
+              </div>
+            </div>
+            <div class="pathway-step">
+              <div class="pathway-icon-box">02</div>
+              <div class="pathway-text">
+                <h4>Hành vi Hóa học (Chemical Behavior)</h4>
+                <p>${plant.colorDesc}. Khả năng tạo liên kết hydro, ái lực lipid (LogP = ${plant.logP}).</p>
+              </div>
+            </div>
+            <div class="pathway-step">
+              <div class="pathway-icon-box">03</div>
+              <div class="pathway-text">
+                <h4>Tương tác Sinh học (Biological Activity)</h4>
+                <p>${plant.scientificInsight}</p>
+              </div>
+            </div>
+            <div class="pathway-step">
+              <div class="pathway-icon-box">04</div>
+              <div class="pathway-text">
+                <h4>Tiềm năng Ứng dụng (Potential Application)</h4>
+                <p>Kế thừa từ y học cổ truyền: "${plant.traditionalUse}" → Phát triển thành dược phẩm chuẩn hóa hiện đại.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      body.innerHTML = scenesHtml;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeStoryModal() {
+      const modal = document.getElementById('storyModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  </script>
+</body>
+</html>
